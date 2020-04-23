@@ -62,7 +62,7 @@ namespace P4FormsTest2
                 Form1.tableLayoutPanel4.Controls.Add(l, 0, i);
                 Form1.tableLayoutPanel4.SetColumnSpan(l, 1);
 
-                File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\rooms.json", JsonConvert.SerializeObject(Form1.rooms, Formatting.Indented));
+                File.WriteAllText(@"C..\..\..\rooms.json", JsonConvert.SerializeObject(Form1.rooms, Formatting.Indented));
 
                 this.Close();
             }

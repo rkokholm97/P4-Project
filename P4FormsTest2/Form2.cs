@@ -71,8 +71,8 @@ namespace P4FormsTest2
                 form1.tableLayoutPanel4.Controls.Add(b, 1, i);
                 form1.tableLayoutPanel4.SetColumnSpan(b, 4);
 
-                File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
-                File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
+                File.WriteAllText(@"..\..\..\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
+                File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
 
                 this.Close();
             }

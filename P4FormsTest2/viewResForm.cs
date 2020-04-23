@@ -58,8 +58,8 @@ namespace P4FormsTest2
                 {
                     form1.reservations.Remove(r);
                     r.Room.IsAvailable = true;
-                    File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
-                    File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
+                    File.WriteAllText(@"..\..\..\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
+                    File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
 
                     // Remove Button from UI
                     form1.Controls.Remove(button);

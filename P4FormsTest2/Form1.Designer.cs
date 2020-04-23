@@ -32,6 +32,10 @@
             this.resPanel = new System.Windows.Forms.Panel();
             this.hotPanel = new System.Windows.Forms.Panel();
             this.guePanel = new System.Windows.Forms.Panel();
+            this.resButton = new System.Windows.Forms.Button();
+            this.hotButton = new System.Windows.Forms.Button();
+            this.gueButton = new System.Windows.Forms.Button();
+            this.testLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,10 +61,6 @@
             this.tuesdayDateLabel = new System.Windows.Forms.Label();
             this.mondayDateLabel = new System.Windows.Forms.Label();
             this.sundayDateLabel = new System.Windows.Forms.Label();
-            this.resButton = new System.Windows.Forms.Button();
-            this.hotButton = new System.Windows.Forms.Button();
-            this.gueButton = new System.Windows.Forms.Button();
-            this.testLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.resPanel.SuspendLayout();
             this.hotPanel.SuspendLayout();
@@ -123,6 +123,53 @@
             this.guePanel.TabIndex = 2;
             this.guePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.guePanel_Paint);
             // 
+            // resButton
+            // 
+            this.resButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.resButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resButton.ForeColor = System.Drawing.Color.White;
+            this.resButton.Location = new System.Drawing.Point(199, 3);
+            this.resButton.Name = "resButton";
+            this.resButton.Size = new System.Drawing.Size(190, 69);
+            this.resButton.TabIndex = 2;
+            this.resButton.Text = "Reservations";
+            this.resButton.UseVisualStyleBackColor = false;
+            this.resButton.Click += new System.EventHandler(this.resButton_Click);
+            // 
+            // hotButton
+            // 
+            this.hotButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.hotButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotButton.ForeColor = System.Drawing.Color.White;
+            this.hotButton.Location = new System.Drawing.Point(395, 3);
+            this.hotButton.Name = "hotButton";
+            this.hotButton.Size = new System.Drawing.Size(190, 69);
+            this.hotButton.TabIndex = 3;
+            this.hotButton.Text = "Hotel Overview";
+            this.hotButton.UseVisualStyleBackColor = false;
+            this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
+            // 
+            // gueButton
+            // 
+            this.gueButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.gueButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gueButton.ForeColor = System.Drawing.Color.White;
+            this.gueButton.Location = new System.Drawing.Point(591, 3);
+            this.gueButton.Name = "gueButton";
+            this.gueButton.Size = new System.Drawing.Size(190, 69);
+            this.gueButton.TabIndex = 4;
+            this.gueButton.Text = "Guest Management";
+            this.gueButton.UseVisualStyleBackColor = false;
+            this.gueButton.Click += new System.EventHandler(this.gueButton_Click);
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(787, 0);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(0, 13);
+            this.testLabel.TabIndex = 5;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
@@ -144,7 +191,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(978, 580);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel4
             // 
@@ -494,53 +541,6 @@
             this.sundayDateLabel.Text = "datelabel";
             this.sundayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // resButton
-            // 
-            this.resButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.resButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resButton.ForeColor = System.Drawing.Color.White;
-            this.resButton.Location = new System.Drawing.Point(199, 3);
-            this.resButton.Name = "resButton";
-            this.resButton.Size = new System.Drawing.Size(190, 69);
-            this.resButton.TabIndex = 2;
-            this.resButton.Text = "Reservations";
-            this.resButton.UseVisualStyleBackColor = false;
-            this.resButton.Click += new System.EventHandler(this.resButton_Click);
-            // 
-            // hotButton
-            // 
-            this.hotButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.hotButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hotButton.ForeColor = System.Drawing.Color.White;
-            this.hotButton.Location = new System.Drawing.Point(395, 3);
-            this.hotButton.Name = "hotButton";
-            this.hotButton.Size = new System.Drawing.Size(190, 69);
-            this.hotButton.TabIndex = 3;
-            this.hotButton.Text = "Hotel Overview";
-            this.hotButton.UseVisualStyleBackColor = false;
-            this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
-            // 
-            // gueButton
-            // 
-            this.gueButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.gueButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gueButton.ForeColor = System.Drawing.Color.White;
-            this.gueButton.Location = new System.Drawing.Point(591, 3);
-            this.gueButton.Name = "gueButton";
-            this.gueButton.Size = new System.Drawing.Size(190, 69);
-            this.gueButton.TabIndex = 4;
-            this.gueButton.Text = "Guest Management";
-            this.gueButton.UseVisualStyleBackColor = false;
-            this.gueButton.Click += new System.EventHandler(this.gueButton_Click);
-            // 
-            // testLabel
-            // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(787, 0);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(0, 13);
-            this.testLabel.TabIndex = 5;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,30 +578,30 @@
         private System.Windows.Forms.Panel guePanel;
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button newResButton;
-        private System.Windows.Forms.Button newRoomBtn;
-        private System.Windows.Forms.Label weekNumberLabel;
-        private System.Windows.Forms.Button increaseWeekBtn;
-        private System.Windows.Forms.Button decreaseWeekBtn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button increaseWeekBtn;
+        private System.Windows.Forms.Button newResButton;
+        private System.Windows.Forms.Button newRoomBtn;
+        private System.Windows.Forms.Label weekNumberLabel;
+        private System.Windows.Forms.Button decreaseWeekBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label mondayDateLabel;
-        private System.Windows.Forms.Label sundayDateLabel;
         private System.Windows.Forms.Label saturdayDateLabel;
         private System.Windows.Forms.Label fridayDateLabel;
         private System.Windows.Forms.Label thursdayDateLabel;
         private System.Windows.Forms.Label wednesdayDateLabel;
         private System.Windows.Forms.Label tuesdayDateLabel;
+        private System.Windows.Forms.Label mondayDateLabel;
+        private System.Windows.Forms.Label sundayDateLabel;
     }
 }
 

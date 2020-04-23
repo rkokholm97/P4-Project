@@ -13,13 +13,13 @@
   },
   {
     "Number": 103,
-    "IsAvailable": true,
+    "IsAvailable": false,
     "IsSuite": false,
     "MaxOccupants": 4
   },
   {
     "Number": 104,
-    "IsAvailable": true,
+    "IsAvailable": false,
     "IsSuite": false,
     "MaxOccupants": 0
   }

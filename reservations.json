@@ -32,5 +32,22 @@
     "NumberOfChildren": 0,
     "PhoneNumber": "123213",
     "Email": "asdad"
+  },
+  {
+    "Id": 3,
+    "Name": "asdqwr",
+    "Room": {
+      "Number": 103,
+      "IsAvailable": false,
+      "IsSuite": false,
+      "MaxOccupants": 4
+    },
+    "Start": "2020-04-18T00:00:00",
+    "End": "2020-04-23T00:00:00+02:00",
+    "NumberOfGuests": 0,
+    "NumberOfAdults": 0,
+    "NumberOfChildren": 0,
+    "PhoneNumber": "qwr",
+    "Email": "qwr"
   }
 ]

@@ -52,23 +52,24 @@ namespace P4FormsTest2
 
         private void resButton_Click(object sender, EventArgs e)
         {
-            resPanel.Show();
-            guePanel.Hide();
-            hotPanel.Hide();
+
         }
 
         private void hotButton_Click(object sender, EventArgs e)
         {
-            hotPanel.Show();
-            guePanel.Hide();
-            resPanel.Hide();
+            this.Hide();
+            HoteloverviewForm hoteloverviewform = new HoteloverviewForm();
+            hoteloverviewform.Closed += (s, args) => this.Close();
+            hoteloverviewform.Show();
         }
 
         private void gueButton_Click(object sender, EventArgs e)
         {
-            guePanel.Show();
-            resPanel.Hide();
-            hotPanel.Hide();
+            this.Hide();
+            GuestmanagementForm guestmanagementform = new GuestmanagementForm();
+            guestmanagementform.Closed += (s, args) => this.Close();
+            guestmanagementform.Show();
+            
         }
 
         private void guePanel_Paint(object sender, PaintEventArgs e)
@@ -130,10 +131,13 @@ namespace P4FormsTest2
                     int startColoumn;
                     if (reservation.Start < WeekShownStart)
                     {
-                        // set startColumn accordingly
+                        startColoumn = 1;
                     } else
                     {
                         // set startColumn accordingly
+                        startColoumn = 0;
+
+
                     }
 
                     Button b = new Button();
@@ -141,7 +145,7 @@ namespace P4FormsTest2
                     b.Text = reservation.Name;
                     b.Name = reservation.Id.ToString();
                     b.Click += new EventHandler(resViewButton_Click);
-                    tableLayoutPanel4.Controls.Add(b, 1, i);
+                    tableLayoutPanel4.Controls.Add(b, startColoumn, i);
                     tableLayoutPanel4.SetColumnSpan(b, 4);
                     i++;
                 }

@@ -33,6 +33,7 @@
             this.hotPanel = new System.Windows.Forms.Panel();
             this.guePanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,19 +49,18 @@
             this.newRoomBtn = new System.Windows.Forms.Button();
             this.weekNumberLabel = new System.Windows.Forms.Label();
             this.decreaseWeekBtn = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.saturdayDateLabel = new System.Windows.Forms.Label();
+            this.fridayDateLabel = new System.Windows.Forms.Label();
+            this.thursdayDateLabel = new System.Windows.Forms.Label();
+            this.wednesdayDateLabel = new System.Windows.Forms.Label();
+            this.tuesdayDateLabel = new System.Windows.Forms.Label();
+            this.mondayDateLabel = new System.Windows.Forms.Label();
+            this.sundayDateLabel = new System.Windows.Forms.Label();
             this.resButton = new System.Windows.Forms.Button();
             this.hotButton = new System.Windows.Forms.Button();
             this.gueButton = new System.Windows.Forms.Button();
             this.testLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.mondayDateLabel = new System.Windows.Forms.Label();
-            this.sundayDateLabel = new System.Windows.Forms.Label();
-            this.tuesdayDateLabel = new System.Windows.Forms.Label();
-            this.wednesdayDateLabel = new System.Windows.Forms.Label();
-            this.thursdayDateLabel = new System.Windows.Forms.Label();
-            this.fridayDateLabel = new System.Windows.Forms.Label();
-            this.saturdayDateLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.resPanel.SuspendLayout();
             this.hotPanel.SuspendLayout();
@@ -145,6 +145,39 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(978, 580);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.AutoScroll = true;
+            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel4.ColumnCount = 8;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 125);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 13;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(970, 451);
+            this.tableLayoutPanel4.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -260,7 +293,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Rooms";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -360,6 +392,108 @@
             this.decreaseWeekBtn.UseVisualStyleBackColor = true;
             this.decreaseWeekBtn.Click += new System.EventHandler(this.decreaseWeekBtn_Click);
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 8;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel6.Controls.Add(this.saturdayDateLabel, 6, 0);
+            this.tableLayoutPanel6.Controls.Add(this.fridayDateLabel, 5, 0);
+            this.tableLayoutPanel6.Controls.Add(this.thursdayDateLabel, 4, 0);
+            this.tableLayoutPanel6.Controls.Add(this.wednesdayDateLabel, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tuesdayDateLabel, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.mondayDateLabel, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.sundayDateLabel, 7, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 106);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(970, 12);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // saturdayDateLabel
+            // 
+            this.saturdayDateLabel.AutoSize = true;
+            this.saturdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saturdayDateLabel.Location = new System.Drawing.Point(729, 0);
+            this.saturdayDateLabel.Name = "saturdayDateLabel";
+            this.saturdayDateLabel.Size = new System.Drawing.Size(115, 12);
+            this.saturdayDateLabel.TabIndex = 15;
+            this.saturdayDateLabel.Text = "datelabel";
+            this.saturdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // fridayDateLabel
+            // 
+            this.fridayDateLabel.AutoSize = true;
+            this.fridayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fridayDateLabel.Location = new System.Drawing.Point(608, 0);
+            this.fridayDateLabel.Name = "fridayDateLabel";
+            this.fridayDateLabel.Size = new System.Drawing.Size(115, 12);
+            this.fridayDateLabel.TabIndex = 14;
+            this.fridayDateLabel.Text = "datelabel";
+            this.fridayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // thursdayDateLabel
+            // 
+            this.thursdayDateLabel.AutoSize = true;
+            this.thursdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thursdayDateLabel.Location = new System.Drawing.Point(487, 0);
+            this.thursdayDateLabel.Name = "thursdayDateLabel";
+            this.thursdayDateLabel.Size = new System.Drawing.Size(115, 12);
+            this.thursdayDateLabel.TabIndex = 13;
+            this.thursdayDateLabel.Text = "datelabel";
+            this.thursdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wednesdayDateLabel
+            // 
+            this.wednesdayDateLabel.AutoSize = true;
+            this.wednesdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wednesdayDateLabel.Location = new System.Drawing.Point(366, 0);
+            this.wednesdayDateLabel.Name = "wednesdayDateLabel";
+            this.wednesdayDateLabel.Size = new System.Drawing.Size(115, 12);
+            this.wednesdayDateLabel.TabIndex = 12;
+            this.wednesdayDateLabel.Text = "datelabel";
+            this.wednesdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tuesdayDateLabel
+            // 
+            this.tuesdayDateLabel.AutoSize = true;
+            this.tuesdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tuesdayDateLabel.Location = new System.Drawing.Point(245, 0);
+            this.tuesdayDateLabel.Name = "tuesdayDateLabel";
+            this.tuesdayDateLabel.Size = new System.Drawing.Size(115, 12);
+            this.tuesdayDateLabel.TabIndex = 11;
+            this.tuesdayDateLabel.Text = "datelabel";
+            this.tuesdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // mondayDateLabel
+            // 
+            this.mondayDateLabel.AutoSize = true;
+            this.mondayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mondayDateLabel.Location = new System.Drawing.Point(124, 0);
+            this.mondayDateLabel.Name = "mondayDateLabel";
+            this.mondayDateLabel.Size = new System.Drawing.Size(115, 12);
+            this.mondayDateLabel.TabIndex = 9;
+            this.mondayDateLabel.Text = "datelabel";
+            this.mondayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sundayDateLabel
+            // 
+            this.sundayDateLabel.AutoSize = true;
+            this.sundayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sundayDateLabel.Location = new System.Drawing.Point(850, 0);
+            this.sundayDateLabel.Name = "sundayDateLabel";
+            this.sundayDateLabel.Size = new System.Drawing.Size(117, 12);
+            this.sundayDateLabel.TabIndex = 10;
+            this.sundayDateLabel.Text = "datelabel";
+            this.sundayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // resButton
             // 
             this.resButton.BackColor = System.Drawing.Color.RoyalBlue;
@@ -406,141 +540,6 @@
             this.testLabel.Name = "testLabel";
             this.testLabel.Size = new System.Drawing.Size(0, 13);
             this.testLabel.TabIndex = 5;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.AutoScroll = true;
-            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel4.ColumnCount = 8;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 125);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 13;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(970, 451);
-            this.tableLayoutPanel4.TabIndex = 3;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 8;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel6.Controls.Add(this.saturdayDateLabel, 6, 0);
-            this.tableLayoutPanel6.Controls.Add(this.fridayDateLabel, 5, 0);
-            this.tableLayoutPanel6.Controls.Add(this.thursdayDateLabel, 4, 0);
-            this.tableLayoutPanel6.Controls.Add(this.wednesdayDateLabel, 3, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tuesdayDateLabel, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.mondayDateLabel, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.sundayDateLabel, 7, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 106);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(970, 12);
-            this.tableLayoutPanel6.TabIndex = 4;
-            // 
-            // mondayDateLabel
-            // 
-            this.mondayDateLabel.AutoSize = true;
-            this.mondayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mondayDateLabel.Location = new System.Drawing.Point(124, 0);
-            this.mondayDateLabel.Name = "mondayDateLabel";
-            this.mondayDateLabel.Size = new System.Drawing.Size(115, 12);
-            this.mondayDateLabel.TabIndex = 9;
-            this.mondayDateLabel.Text = "datelabel";
-            this.mondayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // sundayDateLabel
-            // 
-            this.sundayDateLabel.AutoSize = true;
-            this.sundayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sundayDateLabel.Location = new System.Drawing.Point(850, 0);
-            this.sundayDateLabel.Name = "sundayDateLabel";
-            this.sundayDateLabel.Size = new System.Drawing.Size(117, 12);
-            this.sundayDateLabel.TabIndex = 10;
-            this.sundayDateLabel.Text = "datelabel";
-            this.sundayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tuesdayDateLabel
-            // 
-            this.tuesdayDateLabel.AutoSize = true;
-            this.tuesdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tuesdayDateLabel.Location = new System.Drawing.Point(245, 0);
-            this.tuesdayDateLabel.Name = "tuesdayDateLabel";
-            this.tuesdayDateLabel.Size = new System.Drawing.Size(115, 12);
-            this.tuesdayDateLabel.TabIndex = 11;
-            this.tuesdayDateLabel.Text = "datelabel";
-            this.tuesdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // wednesdayDateLabel
-            // 
-            this.wednesdayDateLabel.AutoSize = true;
-            this.wednesdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wednesdayDateLabel.Location = new System.Drawing.Point(366, 0);
-            this.wednesdayDateLabel.Name = "wednesdayDateLabel";
-            this.wednesdayDateLabel.Size = new System.Drawing.Size(115, 12);
-            this.wednesdayDateLabel.TabIndex = 12;
-            this.wednesdayDateLabel.Text = "datelabel";
-            this.wednesdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // thursdayDateLabel
-            // 
-            this.thursdayDateLabel.AutoSize = true;
-            this.thursdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thursdayDateLabel.Location = new System.Drawing.Point(487, 0);
-            this.thursdayDateLabel.Name = "thursdayDateLabel";
-            this.thursdayDateLabel.Size = new System.Drawing.Size(115, 12);
-            this.thursdayDateLabel.TabIndex = 13;
-            this.thursdayDateLabel.Text = "datelabel";
-            this.thursdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // fridayDateLabel
-            // 
-            this.fridayDateLabel.AutoSize = true;
-            this.fridayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fridayDateLabel.Location = new System.Drawing.Point(608, 0);
-            this.fridayDateLabel.Name = "fridayDateLabel";
-            this.fridayDateLabel.Size = new System.Drawing.Size(115, 12);
-            this.fridayDateLabel.TabIndex = 14;
-            this.fridayDateLabel.Text = "datelabel";
-            this.fridayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // saturdayDateLabel
-            // 
-            this.saturdayDateLabel.AutoSize = true;
-            this.saturdayDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.saturdayDateLabel.Location = new System.Drawing.Point(729, 0);
-            this.saturdayDateLabel.Name = "saturdayDateLabel";
-            this.saturdayDateLabel.Size = new System.Drawing.Size(115, 12);
-            this.saturdayDateLabel.TabIndex = 15;
-            this.saturdayDateLabel.Text = "datelabel";
-            this.saturdayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 

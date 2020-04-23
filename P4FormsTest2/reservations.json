@@ -1,0 +1,19 @@
+[
+  {
+    "Id": 1,
+    "Name": "Rasmus Møller",
+    "Room": {
+      "Number": 101,
+      "IsAvailable": false,
+      "IsSuite": false,
+      "MaxOccupants": 4
+    },
+    "Start": "2020-04-16T00:00:00",
+    "End": "2020-04-25T00:00:00",
+    "NumberOfGuests": 3,
+    "NumberOfAdults": 2,
+    "NumberOfChildren": 1,
+    "PhoneNumber": "22920514",
+    "Email": "rasmus@mail.dk"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "Number": 101,
+    "IsAvailable": false,
+    "IsSuite": false,
+    "MaxOccupants": 4
+  },
+  {
+    "Number": 102,
+    "IsAvailable": true,
+    "IsSuite": false,
+    "MaxOccupants": 4
+  },
+  {
+    "Number": 103,
+    "IsAvailable": true,
+    "IsSuite": false,
+    "MaxOccupants": 4
+  }
+]

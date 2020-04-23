@@ -28,8 +28,8 @@ namespace P4FormsTest2
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            reservations = JsonConvert.DeserializeObject<List<Reservation>>(File.ReadAllText(@"C:\Users\rasmu\source\repos\P4-Project\reservations.json"));
-            rooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"C:\Users\rasmu\source\repos\P4-Project\rooms.json"));
+            reservations = JsonConvert.DeserializeObject<List<Reservation>>(File.ReadAllText(@"..\..\..\reservations.json"));
+            rooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"..\..\..\rooms.json"));
             printReservations();
             printRooms();
 
@@ -188,8 +188,8 @@ namespace P4FormsTest2
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\reservations.json", JsonConvert.SerializeObject(reservations, Formatting.Indented));
-            File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\rooms.json", JsonConvert.SerializeObject(rooms, Formatting.Indented));
+            File.WriteAllText(@"..\..\..\reservations.json", JsonConvert.SerializeObject(reservations, Formatting.Indented));
+            File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(rooms, Formatting.Indented));
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -262,11 +262,6 @@ namespace P4FormsTest2
             CalendarWeekRule calendarWeekRule = cultureInfo.DateTimeFormat.CalendarWeekRule;
             DayOfWeek firstDayOfWeek = cultureInfo.DateTimeFormat.FirstDayOfWeek;
             CurrentWeek = calendar.GetWeekOfYear(WeekShownStart, calendarWeekRule, firstDayOfWeek);
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void newRoomBtn_Click(object sender, EventArgs e)

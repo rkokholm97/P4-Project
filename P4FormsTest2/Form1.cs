@@ -112,12 +112,30 @@ namespace P4FormsTest2
 
         public void printReservations()
         {
+            List<Reservation> relevantReservations = new List<Reservation>();
+            foreach(Reservation reservation in reservations)
+            {
+                if(reservation.Start > WeekShownStart || reservation.End < WeekShownEnd)
+                {
+                    relevantReservations.Add(reservation);
+                }
+            }
 
             if (reservations != null)
             {
+                
                 int i = 0;
-                foreach (Reservation reservation in reservations)
+                foreach (Reservation reservation in relevantReservations)
                 {
+                    int startColoumn;
+                    if (reservation.Start < WeekShownStart)
+                    {
+                        // set startColumn accordingly
+                    } else
+                    {
+                        // set startColumn accordingly
+                    }
+
                     Button b = new Button();
                     b.Dock = DockStyle.Fill;
                     b.Text = reservation.Name;

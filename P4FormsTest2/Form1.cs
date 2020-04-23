@@ -178,7 +178,6 @@ namespace P4FormsTest2
                 if (reservation.Id == Int32.Parse(btn.Name))
                 {
                     r = reservation;
-                    
                 } 
             }
 

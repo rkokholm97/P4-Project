@@ -36,6 +36,8 @@ namespace P4FormsTest2
             viewResTotalGuestsAmount.Text = r.NumberOfGuests.ToString();
             viewResStartLabel.Text = r.Start.ToString();
             viewResEndLabel.Text = r.End.ToString();
+            viewResRoomLabel.Text = r.Room.Number.ToString();
+            this.Text = "Reservation Detals - Reservation ID " + r.Id.ToString();
         }
 
         private void testBtn_Click(object sender, EventArgs e)
@@ -55,7 +57,9 @@ namespace P4FormsTest2
                 if(reservation.Id == r.Id)
                 {
                     form1.reservations.Remove(r);
+                    r.Room.IsAvailable = true;
                     File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
+                    File.WriteAllText(@"C:\Users\rasmu\source\repos\P4-Project\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
 
                     // Remove Button from UI
                     form1.Controls.Remove(button);

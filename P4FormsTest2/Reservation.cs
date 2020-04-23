@@ -35,8 +35,8 @@ namespace P4FormsTest2
             NumberOfAdults = numberOfAdults;
             NumberOfChildren = numberOfChildren;
             NumberOfGuests = numberOfAdults + numberOfChildren;
-            Id = TotalId++;
-            TotalId = TotalId++;
+            TotalId = TotalId + 1;
+            Id = TotalId; 
         }
     }
 }

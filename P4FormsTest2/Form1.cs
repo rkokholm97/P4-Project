@@ -246,11 +246,6 @@ namespace P4FormsTest2
             CurrentWeek = calendar.GetWeekOfYear(WeekShownStart, calendarWeekRule, firstDayOfWeek);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void newRoomBtn_Click(object sender, EventArgs e)
         {
             NewRoomForm newRoomForm = new NewRoomForm(this);

@@ -23,8 +23,7 @@ namespace P4FormsTest2
 
         public void NewRoomForm_Load(object sender, EventArgs e)
         {
-            int amountofrooms = Form1.rooms.Count();
-            roomNumberField.Text = (Form1.rooms[amountofrooms - 1].Number + 1).ToString();
+            
         }
 
         private void titleLabel_Click(object sender, EventArgs e)
@@ -41,18 +40,30 @@ namespace P4FormsTest2
         {
             try
             {
-                int roomnumber = Int32.Parse(roomNumberField.Text);
+                int floor = Int32.Parse(floorField.Text);
+                int roomnumber = Int32.Parse(roomNumberField.Text) + (100*floor);            
                 int maxoccupants = Convert.ToInt32(maxOccupantsField.Value);
                 bool issuite = false;
                 if (suiteRadio.Checked == true)
                 {
                     issuite = true;
                 }
+                int rownumber = 0;
+                foreach(Room room in Form1.rooms)
+                {
+                    if (floor == room.Floor)
+                    {
+                        rownumber++;
+                    }
+                }
 
-                Room r = new Room(roomnumber, true, issuite, maxoccupants);
+                Room r = new Room(roomnumber, issuite, maxoccupants, floor, rownumber);
                 Form1.rooms.Add(r);
 
-                int i = Form1.rooms.Count() - 1;
+                Form1.rooms.Sort();
+
+                Form1.printRooms();
+                /*int i = Form1.rooms.Count() - 1;
                 Label l = new Label();
                 l.Dock = DockStyle.Fill;
                 l.Text = r.Number.ToString();
@@ -60,7 +71,7 @@ namespace P4FormsTest2
                 l.TextAlign = ContentAlignment.MiddleCenter;
                 l.Name = "roomLabel " + r.Number.ToString();
                 Form1.tableLayoutPanel4.Controls.Add(l, 0, i);
-                Form1.tableLayoutPanel4.SetColumnSpan(l, 1);
+                Form1.tableLayoutPanel4.SetColumnSpan(l, 1);*/
 
                 File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(Form1.rooms, Formatting.Indented));
 
@@ -71,5 +82,6 @@ namespace P4FormsTest2
                 this.Close();
             }
         }
+
     }
 }

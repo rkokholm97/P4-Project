@@ -48,8 +48,10 @@ namespace P4FormsTest2
 
             weekNumberLabel.Text = "Week " + CurrentWeek.ToString();
 
+            rooms.Sort();
             printReservations();
             printRooms();
+
         }
 
         private void resButton_Click(object sender, EventArgs e)
@@ -91,26 +93,8 @@ namespace P4FormsTest2
 
         private void newResButton_Click(object sender, EventArgs e)
         {
-            int availableRooms = 0;
-            foreach (Room room in rooms)
-            {
-                if (room.IsAvailable == true)
-                {
-                    availableRooms++;
-                }
-            }
-
-            if (availableRooms > 0)
-            {
                 NewResForm newResForm = new NewResForm(this);
                 newResForm.Show();
-            }
-            else
-            {
-                ShowErrorMessage showErrorMessage = new ShowErrorMessage("No rooms available");
-                showErrorMessage.Show();
-            }
-
         }
 
         public void printReservations()
@@ -204,7 +188,24 @@ namespace P4FormsTest2
                     b.Text = reservation.Start.ToString("dd/MM") + " - " + reservation.End.ToString("dd/MM");
                     b.Name = reservation.Id.ToString();
                     b.Click += new EventHandler(resViewButton_Click);
-                    tableLayoutPanel4.Controls.Add(b, startColoumn, i);
+
+                    int row = 0;
+
+                    TableLayoutControlCollection table = tableLayoutPanel4.Controls;
+                    for(int j = 0; j < table.Count; j++)
+                    {
+                        if(table[j] is Label)
+                        {
+                            Label label = (Label)table[j];
+                            int number = Int32.Parse(label.Text);
+                            if(reservation.Room.Number == number)
+                            {
+                                row = tableLayoutPanel4.GetRow(table[j]);
+                            }
+                        }
+                    }
+
+                    tableLayoutPanel4.Controls.Add(b, startColoumn, row);
                     tableLayoutPanel4.SetColumnSpan(b, endColoumn - startColoumn + 1);
                     i++;
                 }
@@ -216,6 +217,8 @@ namespace P4FormsTest2
         }
         public void printRooms()
         {
+            ClearRoomLabels();
+
             int i = 0;
             foreach (Room room in rooms)
             {
@@ -340,8 +343,18 @@ namespace P4FormsTest2
                 {
                     tableLayoutPanel4.Controls[i].Dispose();
                 }         
-            } 
-            
+            }          
+        }
+
+        private void ClearRoomLabels()
+        {
+            for (int i = tableLayoutPanel4.Controls.Count - 1; i >= 0; --i)
+            {
+                if (tableLayoutPanel4.Controls[i] is Label)
+                {
+                    tableLayoutPanel4.Controls[i].Dispose();
+                }
+            }
         }
 
         private void UpdateRelevantReservations()

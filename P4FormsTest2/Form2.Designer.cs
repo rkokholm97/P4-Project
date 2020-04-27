@@ -45,6 +45,8 @@
             this.newResChildrenField = new System.Windows.Forms.NumericUpDown();
             this.resStartLabel = new System.Windows.Forms.Label();
             this.resEndLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.newResAdultsField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newResChildrenField)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +106,7 @@
             // 
             // newResEndField
             // 
-            this.newResEndField.Location = new System.Drawing.Point(314, 260);
+            this.newResEndField.Location = new System.Drawing.Point(314, 288);
             this.newResEndField.Name = "newResEndField";
             this.newResEndField.TabIndex = 6;
             // 
@@ -143,7 +145,7 @@
             // 
             // newResAdultsField
             // 
-            this.newResAdultsField.Location = new System.Drawing.Point(15, 237);
+            this.newResAdultsField.Location = new System.Drawing.Point(15, 228);
             this.newResAdultsField.Name = "newResAdultsField";
             this.newResAdultsField.Size = new System.Drawing.Size(131, 20);
             this.newResAdultsField.TabIndex = 11;
@@ -151,7 +153,7 @@
             // adultsLabel
             // 
             this.adultsLabel.AutoSize = true;
-            this.adultsLabel.Location = new System.Drawing.Point(12, 221);
+            this.adultsLabel.Location = new System.Drawing.Point(12, 212);
             this.adultsLabel.Name = "adultsLabel";
             this.adultsLabel.Size = new System.Drawing.Size(36, 13);
             this.adultsLabel.TabIndex = 12;
@@ -160,7 +162,7 @@
             // childrenLabel
             // 
             this.childrenLabel.AutoSize = true;
-            this.childrenLabel.Location = new System.Drawing.Point(158, 221);
+            this.childrenLabel.Location = new System.Drawing.Point(158, 212);
             this.childrenLabel.Name = "childrenLabel";
             this.childrenLabel.Size = new System.Drawing.Size(45, 13);
             this.childrenLabel.TabIndex = 14;
@@ -169,7 +171,7 @@
             // 
             // newResChildrenField
             // 
-            this.newResChildrenField.Location = new System.Drawing.Point(161, 237);
+            this.newResChildrenField.Location = new System.Drawing.Point(161, 228);
             this.newResChildrenField.Name = "newResChildrenField";
             this.newResChildrenField.Size = new System.Drawing.Size(128, 20);
             this.newResChildrenField.TabIndex = 13;
@@ -186,17 +188,38 @@
             // resEndLabel
             // 
             this.resEndLabel.AutoSize = true;
-            this.resEndLabel.Location = new System.Drawing.Point(311, 244);
+            this.resEndLabel.Location = new System.Drawing.Point(311, 270);
             this.resEndLabel.Name = "resEndLabel";
             this.resEndLabel.Size = new System.Drawing.Size(86, 13);
             this.resEndLabel.TabIndex = 16;
             this.resEndLabel.Text = "Reservation End";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Room";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(220, 466);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "label2";
             // 
             // NewResForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 501);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.resEndLabel);
             this.Controls.Add(this.resStartLabel);
             this.Controls.Add(this.childrenLabel);
@@ -216,6 +239,7 @@
             this.Controls.Add(this.newResNameField);
             this.Name = "NewResForm";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_load);
             ((System.ComponentModel.ISupportInitialize)(this.newResAdultsField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newResChildrenField)).EndInit();
             this.ResumeLayout(false);
@@ -242,5 +266,7 @@
         private System.Windows.Forms.NumericUpDown newResChildrenField;
         private System.Windows.Forms.Label resStartLabel;
         private System.Windows.Forms.Label resEndLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

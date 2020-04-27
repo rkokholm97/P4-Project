@@ -34,18 +34,22 @@
             this.addRoomBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.roomTypeLabel = new System.Windows.Forms.Label();
-            this.roomNumberField = new System.Windows.Forms.TextBox();
             this.roomNumberLabel = new System.Windows.Forms.Label();
             this.maxOccupantsField = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.floorLabel = new System.Windows.Forms.Label();
+            this.floorField = new System.Windows.Forms.NumericUpDown();
+            this.roomNumberField = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.maxOccupantsField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.floorField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomNumberField)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(98, 23);
+            this.titleLabel.Location = new System.Drawing.Point(110, 23);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(120, 20);
             this.titleLabel.TabIndex = 0;
@@ -55,7 +59,7 @@
             // regularRadio
             // 
             this.regularRadio.AutoSize = true;
-            this.regularRadio.Location = new System.Drawing.Point(124, 175);
+            this.regularRadio.Location = new System.Drawing.Point(137, 230);
             this.regularRadio.Name = "regularRadio";
             this.regularRadio.Size = new System.Drawing.Size(62, 17);
             this.regularRadio.TabIndex = 1;
@@ -66,7 +70,7 @@
             // suiteRadio
             // 
             this.suiteRadio.AutoSize = true;
-            this.suiteRadio.Location = new System.Drawing.Point(124, 194);
+            this.suiteRadio.Location = new System.Drawing.Point(137, 249);
             this.suiteRadio.Name = "suiteRadio";
             this.suiteRadio.Size = new System.Drawing.Size(49, 17);
             this.suiteRadio.TabIndex = 2;
@@ -76,7 +80,7 @@
             // 
             // addRoomBtn
             // 
-            this.addRoomBtn.Location = new System.Drawing.Point(231, 307);
+            this.addRoomBtn.Location = new System.Drawing.Point(231, 354);
             this.addRoomBtn.Name = "addRoomBtn";
             this.addRoomBtn.Size = new System.Drawing.Size(86, 23);
             this.addRoomBtn.TabIndex = 3;
@@ -86,7 +90,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(12, 307);
+            this.cancelBtn.Location = new System.Drawing.Point(12, 354);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(85, 23);
             this.cancelBtn.TabIndex = 4;
@@ -98,27 +102,17 @@
             // 
             this.roomTypeLabel.AutoSize = true;
             this.roomTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomTypeLabel.Location = new System.Drawing.Point(114, 148);
+            this.roomTypeLabel.Location = new System.Drawing.Point(127, 203);
             this.roomTypeLabel.Name = "roomTypeLabel";
             this.roomTypeLabel.Size = new System.Drawing.Size(81, 17);
             this.roomTypeLabel.TabIndex = 5;
             this.roomTypeLabel.Text = "Room Type";
             // 
-            // roomNumberField
-            // 
-            this.roomNumberField.BackColor = System.Drawing.Color.Gainsboro;
-            this.roomNumberField.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.roomNumberField.Location = new System.Drawing.Point(124, 97);
-            this.roomNumberField.Name = "roomNumberField";
-            this.roomNumberField.ReadOnly = true;
-            this.roomNumberField.Size = new System.Drawing.Size(62, 20);
-            this.roomNumberField.TabIndex = 6;
-            // 
             // roomNumberLabel
             // 
             this.roomNumberLabel.AutoSize = true;
             this.roomNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomNumberLabel.Location = new System.Drawing.Point(109, 72);
+            this.roomNumberLabel.Location = new System.Drawing.Point(122, 133);
             this.roomNumberLabel.Name = "roomNumberLabel";
             this.roomNumberLabel.Size = new System.Drawing.Size(99, 17);
             this.roomNumberLabel.TabIndex = 7;
@@ -126,7 +120,7 @@
             // 
             // maxOccupantsField
             // 
-            this.maxOccupantsField.Location = new System.Drawing.Point(122, 257);
+            this.maxOccupantsField.Location = new System.Drawing.Point(135, 310);
             this.maxOccupantsField.Name = "maxOccupantsField";
             this.maxOccupantsField.Size = new System.Drawing.Size(62, 20);
             this.maxOccupantsField.TabIndex = 8;
@@ -135,21 +129,57 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 236);
+            this.label1.Location = new System.Drawing.Point(101, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Maximum Occupants";
             // 
+            // floorLabel
+            // 
+            this.floorLabel.AutoSize = true;
+            this.floorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.floorLabel.Location = new System.Drawing.Point(146, 65);
+            this.floorLabel.Name = "floorLabel";
+            this.floorLabel.Size = new System.Drawing.Size(40, 17);
+            this.floorLabel.TabIndex = 11;
+            this.floorLabel.Text = "Floor";
+            // 
+            // floorField
+            // 
+            this.floorField.Location = new System.Drawing.Point(135, 88);
+            this.floorField.Name = "floorField";
+            this.floorField.Size = new System.Drawing.Size(62, 20);
+            this.floorField.TabIndex = 10;
+            // 
+            // roomNumberField
+            // 
+            this.roomNumberField.Location = new System.Drawing.Point(135, 158);
+            this.roomNumberField.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.roomNumberField.Name = "roomNumberField";
+            this.roomNumberField.Size = new System.Drawing.Size(62, 20);
+            this.roomNumberField.TabIndex = 12;
+            this.roomNumberField.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // NewRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 341);
+            this.ClientSize = new System.Drawing.Size(329, 387);
+            this.Controls.Add(this.roomNumberField);
+            this.Controls.Add(this.floorLabel);
+            this.Controls.Add(this.floorField);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maxOccupantsField);
             this.Controls.Add(this.roomNumberLabel);
-            this.Controls.Add(this.roomNumberField);
             this.Controls.Add(this.roomTypeLabel);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.addRoomBtn);
@@ -160,6 +190,8 @@
             this.Text = "Add New Room";
             this.Load += new System.EventHandler(this.NewRoomForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.maxOccupantsField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.floorField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomNumberField)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,9 +205,11 @@
         private System.Windows.Forms.Button addRoomBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label roomTypeLabel;
-        private System.Windows.Forms.TextBox roomNumberField;
         private System.Windows.Forms.Label roomNumberLabel;
         private System.Windows.Forms.NumericUpDown maxOccupantsField;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label floorLabel;
+        private System.Windows.Forms.NumericUpDown floorField;
+        private System.Windows.Forms.NumericUpDown roomNumberField;
     }
 }

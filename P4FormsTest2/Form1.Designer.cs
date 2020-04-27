@@ -32,10 +32,6 @@
             this.resPanel = new System.Windows.Forms.Panel();
             this.hotPanel = new System.Windows.Forms.Panel();
             this.guePanel = new System.Windows.Forms.Panel();
-            this.resButton = new System.Windows.Forms.Button();
-            this.hotButton = new System.Windows.Forms.Button();
-            this.gueButton = new System.Windows.Forms.Button();
-            this.testLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,6 +57,10 @@
             this.tuesdayDateLabel = new System.Windows.Forms.Label();
             this.mondayDateLabel = new System.Windows.Forms.Label();
             this.sundayDateLabel = new System.Windows.Forms.Label();
+            this.resButton = new System.Windows.Forms.Button();
+            this.hotButton = new System.Windows.Forms.Button();
+            this.gueButton = new System.Windows.Forms.Button();
+            this.testLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.resPanel.SuspendLayout();
             this.hotPanel.SuspendLayout();
@@ -122,53 +122,6 @@
             this.guePanel.Size = new System.Drawing.Size(978, 580);
             this.guePanel.TabIndex = 2;
             this.guePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.guePanel_Paint);
-            // 
-            // resButton
-            // 
-            this.resButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.resButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resButton.ForeColor = System.Drawing.Color.White;
-            this.resButton.Location = new System.Drawing.Point(199, 3);
-            this.resButton.Name = "resButton";
-            this.resButton.Size = new System.Drawing.Size(190, 69);
-            this.resButton.TabIndex = 2;
-            this.resButton.Text = "Reservations";
-            this.resButton.UseVisualStyleBackColor = false;
-            this.resButton.Click += new System.EventHandler(this.resButton_Click);
-            // 
-            // hotButton
-            // 
-            this.hotButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.hotButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hotButton.ForeColor = System.Drawing.Color.White;
-            this.hotButton.Location = new System.Drawing.Point(395, 3);
-            this.hotButton.Name = "hotButton";
-            this.hotButton.Size = new System.Drawing.Size(190, 69);
-            this.hotButton.TabIndex = 3;
-            this.hotButton.Text = "Hotel Overview";
-            this.hotButton.UseVisualStyleBackColor = false;
-            this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
-            // 
-            // gueButton
-            // 
-            this.gueButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.gueButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gueButton.ForeColor = System.Drawing.Color.White;
-            this.gueButton.Location = new System.Drawing.Point(591, 3);
-            this.gueButton.Name = "gueButton";
-            this.gueButton.Size = new System.Drawing.Size(190, 69);
-            this.gueButton.TabIndex = 4;
-            this.gueButton.Text = "Guest Management";
-            this.gueButton.UseVisualStyleBackColor = false;
-            this.gueButton.Click += new System.EventHandler(this.gueButton_Click);
-            // 
-            // testLabel
-            // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(787, 0);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(0, 13);
-            this.testLabel.TabIndex = 5;
             // 
             // tableLayoutPanel2
             // 
@@ -402,9 +355,9 @@
             // 
             // newRoomBtn
             // 
-            this.newRoomBtn.BackColor = System.Drawing.Color.DarkOrchid;
+            this.newRoomBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.newRoomBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newRoomBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkViolet;
+            this.newRoomBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.newRoomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newRoomBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -540,6 +493,53 @@
             this.sundayDateLabel.TabIndex = 10;
             this.sundayDateLabel.Text = "datelabel";
             this.sundayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // resButton
+            // 
+            this.resButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.resButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resButton.ForeColor = System.Drawing.Color.White;
+            this.resButton.Location = new System.Drawing.Point(199, 3);
+            this.resButton.Name = "resButton";
+            this.resButton.Size = new System.Drawing.Size(190, 69);
+            this.resButton.TabIndex = 2;
+            this.resButton.Text = "Reservations";
+            this.resButton.UseVisualStyleBackColor = false;
+            this.resButton.Click += new System.EventHandler(this.resButton_Click);
+            // 
+            // hotButton
+            // 
+            this.hotButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.hotButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotButton.ForeColor = System.Drawing.Color.White;
+            this.hotButton.Location = new System.Drawing.Point(395, 3);
+            this.hotButton.Name = "hotButton";
+            this.hotButton.Size = new System.Drawing.Size(190, 69);
+            this.hotButton.TabIndex = 3;
+            this.hotButton.Text = "Hotel Overview";
+            this.hotButton.UseVisualStyleBackColor = false;
+            this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
+            // 
+            // gueButton
+            // 
+            this.gueButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.gueButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gueButton.ForeColor = System.Drawing.Color.White;
+            this.gueButton.Location = new System.Drawing.Point(591, 3);
+            this.gueButton.Name = "gueButton";
+            this.gueButton.Size = new System.Drawing.Size(190, 69);
+            this.gueButton.TabIndex = 4;
+            this.gueButton.Text = "Guest Management";
+            this.gueButton.UseVisualStyleBackColor = false;
+            this.gueButton.Click += new System.EventHandler(this.gueButton_Click);
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(787, 0);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(0, 13);
+            this.testLabel.TabIndex = 5;
             // 
             // Form1
             // 

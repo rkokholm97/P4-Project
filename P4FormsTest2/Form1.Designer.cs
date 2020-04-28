@@ -144,7 +144,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(978, 580);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel4
             // 
@@ -355,9 +355,9 @@
             // 
             // newRoomBtn
             // 
-            this.newRoomBtn.BackColor = System.Drawing.Color.DarkOrchid;
+            this.newRoomBtn.BackColor = System.Drawing.Color.DarkCyan;
             this.newRoomBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newRoomBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkViolet;
+            this.newRoomBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
             this.newRoomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newRoomBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -578,30 +578,30 @@
         private System.Windows.Forms.Panel guePanel;
         private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button newResButton;
-        private System.Windows.Forms.Button newRoomBtn;
-        private System.Windows.Forms.Label weekNumberLabel;
-        private System.Windows.Forms.Button increaseWeekBtn;
-        private System.Windows.Forms.Button decreaseWeekBtn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button increaseWeekBtn;
+        private System.Windows.Forms.Button newResButton;
+        private System.Windows.Forms.Button newRoomBtn;
+        private System.Windows.Forms.Label weekNumberLabel;
+        private System.Windows.Forms.Button decreaseWeekBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label mondayDateLabel;
-        private System.Windows.Forms.Label sundayDateLabel;
         private System.Windows.Forms.Label saturdayDateLabel;
         private System.Windows.Forms.Label fridayDateLabel;
         private System.Windows.Forms.Label thursdayDateLabel;
         private System.Windows.Forms.Label wednesdayDateLabel;
         private System.Windows.Forms.Label tuesdayDateLabel;
+        private System.Windows.Forms.Label mondayDateLabel;
+        private System.Windows.Forms.Label sundayDateLabel;
     }
 }
 

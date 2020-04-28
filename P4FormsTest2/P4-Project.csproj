@@ -49,6 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Guest.cs" />
+    <Compile Include="GuestmanagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestmanagementForm.Designer.cs">
+      <DependentUpon>GuestmanagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoteloverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoteloverviewForm.Designer.cs">
+      <DependentUpon>HoteloverviewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reservations_usercontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reservations_usercontrol.Designer.cs">
+      <DependentUpon>reservations_usercontrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Room.cs" />
     <Compile Include="ShowErrorMessage.cs">
       <SubType>Form</SubType>
@@ -89,6 +108,12 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GuestmanagementForm.resx">
+      <DependentUpon>GuestmanagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoteloverviewForm.resx">
+      <DependentUpon>HoteloverviewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewRoomForm.resx">
       <DependentUpon>NewRoomForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +126,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reservations_usercontrol.resx">
+      <DependentUpon>reservations_usercontrol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShowErrorMessage.resx">
       <DependentUpon>ShowErrorMessage.cs</DependentUpon>
     </EmbeddedResource>

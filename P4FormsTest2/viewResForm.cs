@@ -57,7 +57,6 @@ namespace P4FormsTest2
                 if(reservation.Id == r.Id)
                 {
                     form1.reservations.Remove(r);
-                    r.Room.IsAvailable = true;
                     File.WriteAllText(@"..\..\..\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
                     File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
 

@@ -1,0 +1,23 @@
+[
+  {
+    "Number": 101,
+    "IsSuite": false,
+    "MaxOccupants": 0,
+    "Floor": 1,
+    "RowNumber": 0
+  },
+  {
+    "Number": 102,
+    "IsSuite": false,
+    "MaxOccupants": 0,
+    "Floor": 1,
+    "RowNumber": 0
+  },
+  {
+    "Number": 103,
+    "IsSuite": false,
+    "MaxOccupants": 0,
+    "Floor": 1,
+    "RowNumber": 0
+  }
+]

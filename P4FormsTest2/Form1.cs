@@ -15,7 +15,8 @@ namespace P4FormsTest2
 {
     public partial class Form1 : Form
     {
-        public List<Reservation> reservations;
+        public List<Reservation> reservations { get; set; } = new List<Reservation>();
+        public List<Reservation> relevantReservations { get; set; } = new List<Reservation>();
         public List<Room> rooms = new List<Room>();
         public DateTime WeekShownStart;
         public DateTime WeekShownEnd;
@@ -30,8 +31,7 @@ namespace P4FormsTest2
         {
             reservations = JsonConvert.DeserializeObject<List<Reservation>>(File.ReadAllText(@"..\..\..\reservations.json"));
             rooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"..\..\..\rooms.json"));
-            printReservations();
-            printRooms();
+
 
             WeekShownStart = GetStartOfWeek(DateTime.Now);
             WeekShownEnd = GetEndOfWeek(DateTime.Now);
@@ -48,27 +48,32 @@ namespace P4FormsTest2
 
             weekNumberLabel.Text = "Week " + CurrentWeek.ToString();
 
+            rooms.Sort();
+            printReservations();
+            printRooms();
+
         }
 
         private void resButton_Click(object sender, EventArgs e)
         {
-            resPanel.Show();
-            guePanel.Hide();
-            hotPanel.Hide();
+
         }
 
         private void hotButton_Click(object sender, EventArgs e)
         {
-            hotPanel.Show();
-            guePanel.Hide();
-            resPanel.Hide();
+            this.Hide();
+            HoteloverviewForm hoteloverviewform = new HoteloverviewForm();
+            hoteloverviewform.Closed += (s, args) => this.Close();
+            hoteloverviewform.Show();
         }
 
         private void gueButton_Click(object sender, EventArgs e)
         {
-            guePanel.Show();
-            resPanel.Hide();
-            hotPanel.Hide();
+            this.Hide();
+            GuestmanagementForm guestmanagementform = new GuestmanagementForm();
+            guestmanagementform.Closed += (s, args) => this.Close();
+            guestmanagementform.Show();
+            
         }
 
         private void guePanel_Paint(object sender, PaintEventArgs e)
@@ -88,61 +93,120 @@ namespace P4FormsTest2
 
         private void newResButton_Click(object sender, EventArgs e)
         {
-            int availableRooms = 0;
-            foreach (Room room in rooms)
-            {
-                if (room.IsAvailable == true)
-                {
-                    availableRooms++;
-                }
-            }
-
-            if (availableRooms > 0)
-            {
                 NewResForm newResForm = new NewResForm(this);
                 newResForm.Show();
-            }
-            else
-            {
-                ShowErrorMessage showErrorMessage = new ShowErrorMessage("No rooms available");
-                showErrorMessage.Show();
-            }
-
         }
 
         public void printReservations()
         {
-            List<Reservation> relevantReservations = new List<Reservation>();
-            foreach(Reservation reservation in reservations)
-            {
-                if(reservation.Start > WeekShownStart || reservation.End < WeekShownEnd)
-                {
-                    relevantReservations.Add(reservation);
-                }
-            }
+            ClearReservationButtons();
+            UpdateRelevantReservations();
 
-            if (reservations != null)
+            if (relevantReservations != null)
             {
                 
                 int i = 0;
+                DayOfWeek day;
                 foreach (Reservation reservation in relevantReservations)
                 {
                     int startColoumn;
-                    if (reservation.Start < WeekShownStart)
+                    int endColoumn;
+                    if (reservation.Start <= WeekShownStart)
                     {
-                        // set startColumn accordingly
+                        day = reservation.Start.DayOfWeek;
+                        startColoumn = 1;
                     } else
                     {
-                        // set startColumn accordingly
+                        day = reservation.Start.DayOfWeek;
+                        switch(day.ToString())
+                        {
+                            case "Monday":
+                                startColoumn = 1;
+                                break;
+                            case "Tuesday":
+                                startColoumn = 2;
+                                break;
+                            case "Wednesday":
+                                startColoumn = 3;
+                                break;
+                            case "Thursday":
+                                startColoumn = 4;
+                                break;
+                            case "Friday":
+                                startColoumn = 5;
+                                break;
+                            case "Saturday":
+                                startColoumn = 6;
+                                break;
+                            case "Sunday":
+                                startColoumn = 7;
+                                break;
+                            default:
+                                startColoumn = 1;
+                                break;
+                        }
+                    }
+
+                    if(reservation.End >= WeekShownEnd)
+                    {
+                        endColoumn = 7;
+                    } else
+                    {
+                        day = reservation.End.DayOfWeek;
+                        switch (day.ToString())
+                        {
+                            case "Monday":
+                                endColoumn = 1;
+                                break;
+                            case "Tuesday":
+                                endColoumn = 2;
+                                break;
+                            case "Wednesday":
+                                endColoumn = 3;
+                                break;
+                            case "Thursday":
+                                endColoumn = 4;
+                                break;
+                            case "Friday":
+                                endColoumn = 5;
+                                break;
+                            case "Saturday":
+                                endColoumn = 6;
+                                break;
+                            case "Sunday":
+                                endColoumn = 7;
+                                break;
+                            default:
+                                endColoumn = 7;
+                                break;
+                        }
                     }
 
                     Button b = new Button();
                     b.Dock = DockStyle.Fill;
-                    b.Text = reservation.Name;
+                    //b.Text = reservation.Name;
+                    b.Text = reservation.Start.ToString("dd/MM") + " - " + reservation.End.ToString("dd/MM");
                     b.Name = reservation.Id.ToString();
                     b.Click += new EventHandler(resViewButton_Click);
-                    tableLayoutPanel4.Controls.Add(b, 1, i);
-                    tableLayoutPanel4.SetColumnSpan(b, 4);
+
+                    int row = 0;
+
+                    TableLayoutControlCollection table = tableLayoutPanel4.Controls;
+                    for(int j = 0; j < table.Count; j++)
+                    {
+                        if(table[j] is Label)
+                        {
+                            Label label = (Label)table[j];
+                            int number = Int32.Parse(label.Text);
+                            if(reservation.Room.Number == number)
+                            {
+                                row = tableLayoutPanel4.GetRow(table[j]);
+                            }
+                        }
+                    }
+
+                    tableLayoutPanel4.Controls.Add(b, startColoumn, row);
+                    tableLayoutPanel4.SetColumnSpan(b, endColoumn - startColoumn + 1);
                     i++;
                 }
             } else
@@ -153,6 +217,8 @@ namespace P4FormsTest2
         }
         public void printRooms()
         {
+            ClearRoomLabels();
+
             int i = 0;
             foreach (Room room in rooms)
             {
@@ -178,7 +244,6 @@ namespace P4FormsTest2
                 if (reservation.Id == Int32.Parse(btn.Name))
                 {
                     r = reservation;
-                    
                 } 
             }
 
@@ -231,7 +296,7 @@ namespace P4FormsTest2
             fridayDateLabel.Text = WeekShownEnd.AddDays(-2).ToString("dd/MM");
             saturdayDateLabel.Text = WeekShownEnd.AddDays(-1).ToString("dd/MM");
             sundayDateLabel.Text = WeekShownEnd.ToString("dd/MM");
-
+            printReservations();
         }
 
         private void increaseWeekBtn_Click(object sender, EventArgs e)
@@ -248,8 +313,8 @@ namespace P4FormsTest2
             thursdayDateLabel.Text = WeekShownStart.AddDays(3).ToString("dd/MM");
             fridayDateLabel.Text = WeekShownEnd.AddDays(-2).ToString("dd/MM");
             saturdayDateLabel.Text = WeekShownEnd.AddDays(-1).ToString("dd/MM");
-            sundayDateLabel.Text = WeekShownEnd.ToString("dd/MM");
-
+            sundayDateLabel.Text = WeekShownEnd.ToString("dd/MM");          
+            printReservations();
         }
 
         private void GetCurrentWeek()
@@ -268,6 +333,41 @@ namespace P4FormsTest2
         {
             NewRoomForm newRoomForm = new NewRoomForm(this);
             newRoomForm.Show();
+        }
+
+        private void ClearReservationButtons()
+        {
+            for (int i = tableLayoutPanel4.Controls.Count - 1; i >= 0; --i)
+            {
+                if(tableLayoutPanel4.Controls[i] is Button)
+                {
+                    tableLayoutPanel4.Controls[i].Dispose();
+                }         
+            }          
+        }
+
+        private void ClearRoomLabels()
+        {
+            for (int i = tableLayoutPanel4.Controls.Count - 1; i >= 0; --i)
+            {
+                if (tableLayoutPanel4.Controls[i] is Label)
+                {
+                    tableLayoutPanel4.Controls[i].Dispose();
+                }
+            }
+        }
+
+        private void UpdateRelevantReservations()
+        {
+            List<Reservation> updatedReservations = new List<Reservation>();        
+            foreach (Reservation reservation in reservations)
+            {
+                if ((reservation.Start >= WeekShownStart && reservation.Start <= WeekShownEnd) || (reservation.End <= WeekShownEnd && reservation.End > WeekShownStart))
+                {
+                    updatedReservations.Add(reservation);
+                }
+            }
+            relevantReservations = updatedReservations;
         }
     }
 }

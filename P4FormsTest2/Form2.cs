@@ -9,16 +9,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace P4FormsTest2
 {
     public partial class NewResForm : Form
     {
         public Form1 form1;
+        public ListBox roomSelectionField = new ListBox();
         public NewResForm(Form1 callingForm)
         {
             form1 = callingForm;
             InitializeComponent();
+        }
+
+        public void Form2_load(object sender, EventArgs e)
+        {
+            roomSelectionField.Size = new Size(277, 160);
+            roomSelectionField.Location = new Point(12, 288);
+
+            foreach (Room room in form1.rooms)
+            {
+                roomSelectionField.Items.Add(room);
+            }
+
+            this.Controls.Add(roomSelectionField);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,53 +49,77 @@ namespace P4FormsTest2
 
         private void newResConfirmButton_Click(object sender, EventArgs e)
         {
+            string name = newResNameField.Text;
+            string email = newResEmailField.Text;
+            string phone = newResPhoneField.Text;
+            DateTime start = newResStartField.SelectionStart;
+            DateTime end = newResEndField.SelectionStart;
+            int adults = Convert.ToInt32(Math.Round(newResAdultsField.Value, 0));
+            int children = Convert.ToInt32(Math.Round(newResChildrenField.Value, 0));
+            Room selectedRoom = roomSelectionField.SelectedItem as Room;
 
+            bool availability = true;
 
-                string name = newResNameField.Text;
-                string email = newResEmailField.Text;
-                string phone = newResPhoneField.Text;
-                DateTime start = newResStartField.SelectionStart;
-                DateTime end = newResEndField.SelectionStart;
-                int adults = Convert.ToInt32(Math.Round(newResAdultsField.Value, 0));
-                int children = Convert.ToInt32(Math.Round(newResChildrenField.Value, 0));
-                Room availableRoom = null;
-
-                foreach (Room room in form1.rooms)
+            foreach(Reservation reservation in form1.reservations)
+            {
+                if(reservation.Room.Number == selectedRoom.Number)
                 {
-                    if (room.IsAvailable == true)
+                    if((start >= reservation.Start && start <= reservation.End) || (end <= reservation.End && end >= reservation.Start))
                     {
-                        availableRoom = room;
-                        break;
+                        availability = false;
                     }
                 }
+            }
 
-                if (form1.reservations == null)
+            if (availability == true)
+            {
+                if(start > end)
                 {
-                    form1.reservations = new List<Reservation>();
+                    ShowErrorMessage error = new ShowErrorMessage("Start date cannot be later than end date");
+                    error.Show();
+                } else
+                {
+                    Reservation r = new Reservation(name, selectedRoom, start, end, phone, email, adults, children);
+                    form1.reservations.Add(r);
+                    int i = form1.reservations.Count() - 1;
+
+                    Button b = new Button();
+                    b.Dock = DockStyle.Fill;
+                    b.Text = name;
+                    b.Name = r.Id.ToString();
+                    b.Click += new EventHandler(form1.resViewButton_Click);
+                    form1.tableLayoutPanel4.Controls.Add(b, 1, i);
+                    form1.tableLayoutPanel4.SetColumnSpan(b, 4);
+
+                    File.WriteAllText(@"..\..\..\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
+                    File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
+
+                    form1.printReservations();
+
+                    this.Close();
                 }
 
-                Reservation r = new Reservation(name, availableRoom, start, end, phone, email, adults, children);
-                form1.reservations.Add(r);
-                availableRoom.IsAvailable = false;
-                int i = form1.reservations.Count() - 1;
-
-                Button b = new Button();
-                b.Dock = DockStyle.Fill;
-                b.Text = name;
-                b.Name = r.Id.ToString();
-                b.Click += new EventHandler(form1.resViewButton_Click);
-                form1.tableLayoutPanel4.Controls.Add(b, 1, i);
-                form1.tableLayoutPanel4.SetColumnSpan(b, 4);
-
-                File.WriteAllText(@"..\..\..\reservations.json", JsonConvert.SerializeObject(form1.reservations, Formatting.Indented));
-                File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(form1.rooms, Formatting.Indented));
-
-                this.Close();
+            } else
+            {
+                ShowErrorMessage errorwindow = new ShowErrorMessage("Selected room is already booked at that time.");
+                errorwindow.Show();
             }
+
+        }
                  
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

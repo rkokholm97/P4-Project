@@ -33,6 +33,9 @@
             this.resPanel = new System.Windows.Forms.Panel();
             this.hotPanel = new System.Windows.Forms.Panel();
             this.guePanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.searchField = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.AllButton = new System.Windows.Forms.Button();
             this.FutureButton = new System.Windows.Forms.Button();
             this.PreviousButton = new System.Windows.Forms.Button();
@@ -47,9 +50,7 @@
             this.hotButton = new System.Windows.Forms.Button();
             this.gueButton = new System.Windows.Forms.Button();
             this.testLabel = new System.Windows.Forms.Label();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.searchField = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.resPanel.SuspendLayout();
             this.hotPanel.SuspendLayout();
@@ -70,6 +71,7 @@
             this.tableLayoutPanel1.Controls.Add(this.hotButton, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.gueButton, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.testLabel, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -115,6 +117,36 @@
             this.guePanel.Name = "guePanel";
             this.guePanel.Size = new System.Drawing.Size(978, 580);
             this.guePanel.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(878, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 34);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Print List";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // searchField
+            // 
+            this.searchField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchField.Location = new System.Drawing.Point(523, 27);
+            this.searchField.Name = "searchField";
+            this.searchField.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.searchField.Size = new System.Drawing.Size(129, 20);
+            this.searchField.TabIndex = 7;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.searchButton.Location = new System.Drawing.Point(658, 19);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(85, 34);
+            this.searchButton.TabIndex = 6;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // AllButton
             // 
@@ -273,35 +305,14 @@
             this.testLabel.Size = new System.Drawing.Size(0, 13);
             this.testLabel.TabIndex = 5;
             // 
-            // searchButton
+            // label1
             // 
-            this.searchButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.searchButton.Location = new System.Drawing.Point(658, 19);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(85, 34);
-            this.searchButton.TabIndex = 6;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // searchField
-            // 
-            this.searchField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchField.Location = new System.Drawing.Point(523, 27);
-            this.searchField.Name = "searchField";
-            this.searchField.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.searchField.Size = new System.Drawing.Size(129, 20);
-            this.searchField.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(878, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Print List";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
             // 
             // GuestmanagementForm
             // 
@@ -346,5 +357,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchField;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

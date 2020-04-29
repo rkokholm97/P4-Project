@@ -13,7 +13,7 @@ using System.Globalization;
 
 namespace P4FormsTest2
 {
-    public partial class Form1 : Form
+    public partial class ReservationsForm : Form
     {
         public List<Reservation> reservations { get; set; } = new List<Reservation>();
         public List<Reservation> relevantReservations { get; set; } = new List<Reservation>();
@@ -22,7 +22,7 @@ namespace P4FormsTest2
         public DateTime WeekShownEnd;
         public int CurrentWeek;
 
-        public Form1()
+        public ReservationsForm()
         {
             InitializeComponent();
         }

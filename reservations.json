@@ -55,25 +55,7 @@
   },
   {
     "Id": 4,
-    "Name": "",
-    "Room": {
-      "Number": 101,
-      "IsSuite": false,
-      "MaxOccupants": 0,
-      "Floor": 1,
-      "RowNumber": 0
-    },
-    "Start": "2020-05-01T00:00:00",
-    "End": "2020-05-03T00:00:00",
-    "NumberOfGuests": 0,
-    "NumberOfAdults": 0,
-    "NumberOfChildren": 0,
-    "PhoneNumber": "",
-    "Email": ""
-  },
-  {
-    "Id": 5,
-    "Name": "asd",
+    "Name": "ad",
     "Room": {
       "Number": 102,
       "IsSuite": false,
@@ -81,12 +63,12 @@
       "Floor": 1,
       "RowNumber": 0
     },
-    "Start": "2020-04-23T00:00:00",
-    "End": "2020-05-07T00:00:00",
-    "NumberOfGuests": 2,
-    "NumberOfAdults": 2,
+    "Start": "2020-04-22T00:00:00",
+    "End": "2020-05-08T00:00:00",
+    "NumberOfGuests": 0,
+    "NumberOfAdults": 0,
     "NumberOfChildren": 0,
-    "PhoneNumber": "asdasd",
-    "Email": "asd"
+    "PhoneNumber": "ds",
+    "Email": "ds"
   }
 ]

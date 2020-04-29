@@ -69,17 +69,17 @@
       <DependentUpon>NewRoomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservation.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="ReservationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ReservationsForm.Designer.cs">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="NewResForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="NewResForm.Designer.cs">
+      <DependentUpon>NewResForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,11 +102,11 @@
     <Compile Include="viewResForm.Designer.cs">
       <DependentUpon>viewResForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ReservationsForm.resx">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="NewResForm.resx">
+      <DependentUpon>NewResForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuestmanagementForm.resx">
       <DependentUpon>GuestmanagementForm.cs</DependentUpon>

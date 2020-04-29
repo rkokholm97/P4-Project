@@ -15,9 +15,9 @@ namespace P4FormsTest2
     public partial class viewResForm : Form
     {
         Reservation r { get; set; }
-        Form1 form1;
+        ReservationsForm form1;
         Button button;
-        public viewResForm(Reservation reservation, Form1 form, Button btn)
+        public viewResForm(Reservation reservation, ReservationsForm form, Button btn)
         {
             InitializeComponent();
             r = reservation;

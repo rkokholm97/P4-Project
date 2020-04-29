@@ -1,6 +1,6 @@
 ﻿namespace P4FormsTest2
 {
-    partial class Form1
+    partial class ReservationsForm
     {
         /// <summary>
         /// Required designer variable.

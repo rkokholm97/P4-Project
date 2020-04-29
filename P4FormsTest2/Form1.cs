@@ -17,7 +17,7 @@ namespace P4FormsTest2
     {
         public List<Reservation> reservations { get; set; } = new List<Reservation>();
         public List<Reservation> relevantReservations { get; set; } = new List<Reservation>();
-        public List<Room> rooms = new List<Room>();
+        public List<Room> rooms { get; set; } = new List<Room>();
         public DateTime WeekShownStart;
         public DateTime WeekShownEnd;
         public int CurrentWeek;
@@ -62,7 +62,7 @@ namespace P4FormsTest2
         private void hotButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HoteloverviewForm hoteloverviewform = new HoteloverviewForm();
+            HoteloverviewForm hoteloverviewform = new HoteloverviewForm(this);
             hoteloverviewform.Closed += (s, args) => this.Close();
             hoteloverviewform.Show();
         }
@@ -70,7 +70,7 @@ namespace P4FormsTest2
         private void gueButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            GuestmanagementForm guestmanagementform = new GuestmanagementForm();
+            GuestmanagementForm guestmanagementform = new GuestmanagementForm(this);
             guestmanagementform.Closed += (s, args) => this.Close();
             guestmanagementform.Show();
             

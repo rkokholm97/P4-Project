@@ -49,9 +49,9 @@ namespace P4FormsTest2
             weekNumberLabel.Text = "Week " + CurrentWeek.ToString();
 
             rooms.Sort();
-            printReservations();
             printRooms();
-
+            printReservations();
+            
         }
 
         private void resButton_Click(object sender, EventArgs e)
@@ -362,7 +362,7 @@ namespace P4FormsTest2
             List<Reservation> updatedReservations = new List<Reservation>();        
             foreach (Reservation reservation in reservations)
             {
-                if ((reservation.Start >= WeekShownStart && reservation.Start <= WeekShownEnd) || (reservation.End <= WeekShownEnd && reservation.End > WeekShownStart))
+                if ((reservation.Start >= WeekShownStart && reservation.Start <= WeekShownEnd) || (reservation.End <= WeekShownEnd && reservation.End > WeekShownStart || (WeekShownStart > reservation.Start && WeekShownEnd < reservation.End)))
                 {
                     updatedReservations.Add(reservation);
                 }

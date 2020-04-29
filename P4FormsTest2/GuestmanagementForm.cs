@@ -14,10 +14,11 @@ namespace P4FormsTest2
 {
     public partial class GuestmanagementForm : Form
     {
+        public Form1 WinForm1 { get; set; }
         public List<Reservation> reservations = new List<Reservation>();
-        public GuestmanagementForm()
+        public GuestmanagementForm(Form1 winForm1)
         {
-            
+            WinForm1 = winForm1;
             InitializeComponent();
         }
 
@@ -42,7 +43,7 @@ namespace P4FormsTest2
         private void hotButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            HoteloverviewForm hoteloverviewForm = new HoteloverviewForm();
+            HoteloverviewForm hoteloverviewForm = new HoteloverviewForm(WinForm1);
             hoteloverviewForm.Closed += (s, args) => this.Close();
             hoteloverviewForm.Show();
         }

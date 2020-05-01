@@ -34,8 +34,8 @@ namespace P4FormsTest2
             viewResAdultsAmount.Text = r.NumberOfAdults.ToString();
             viewResChildrenAmount.Text = r.NumberOfChildren.ToString();
             viewResTotalGuestsAmount.Text = r.NumberOfGuests.ToString();
-            viewResStartLabel.Text = r.Start.ToString();
-            viewResEndLabel.Text = r.End.ToString();
+            viewResStartLabel.Text = r.Start.ToString("dddd, dd MMMM yyyy");
+            viewResEndLabel.Text = r.End.ToString("dddd, dd MMMM yyyy");
             viewResRoomLabel.Text = r.Room.Number.ToString();
             this.Text = "Reservation Details - Reservation ID " + r.Id.ToString();
         }

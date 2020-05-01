@@ -284,10 +284,10 @@ namespace P4FormsTest2
         }
 
         private void decreaseWeekBtn_Click(object sender, EventArgs e)
-        {
-            GetCurrentWeek();
+        {        
             WeekShownStart = WeekShownStart.AddDays(-7);
             WeekShownEnd = WeekShownEnd.AddDays(-7);
+            GetCurrentWeek();
             weekNumberLabel.Text = "Week " + CurrentWeek.ToString();
 
             mondayDateLabel.Text = WeekShownStart.ToString("dd/MM");
@@ -301,8 +301,7 @@ namespace P4FormsTest2
         }
 
         private void increaseWeekBtn_Click(object sender, EventArgs e)
-        {
-            
+        {      
             WeekShownStart = WeekShownStart.AddDays(7);
             WeekShownEnd = WeekShownEnd.AddDays(7);
             GetCurrentWeek();

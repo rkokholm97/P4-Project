@@ -100,6 +100,7 @@
             this.viewResEditBtn.TabIndex = 3;
             this.viewResEditBtn.Text = "Edit Reservation";
             this.viewResEditBtn.UseVisualStyleBackColor = false;
+            this.viewResEditBtn.Click += new System.EventHandler(this.viewResEditBtn_Click);
             // 
             // viewResStaticNameLabel
             // 

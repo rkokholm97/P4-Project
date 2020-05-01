@@ -46,7 +46,6 @@
             this.resStartLabel = new System.Windows.Forms.Label();
             this.resEndLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.newResAdultsField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newResChildrenField)).BeginInit();
             this.SuspendLayout();
@@ -204,21 +203,11 @@
             this.label1.Text = "Room";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(220, 466);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "label2";
-            // 
             // NewResForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 501);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.resEndLabel);
             this.Controls.Add(this.resStartLabel);
@@ -267,6 +256,5 @@
         private System.Windows.Forms.Label resStartLabel;
         private System.Windows.Forms.Label resEndLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

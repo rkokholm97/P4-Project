@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace P4FormsTest2
@@ -21,7 +22,7 @@ namespace P4FormsTest2
         public string Email { get; set; }
         public Reservation (string name, Room room, DateTime start, DateTime end, string phoneNumber, string email, int numberOfAdults, int numberOfChildren)
         {
-            Name = name;
+            Name = UpperFirst(name);
             Room = room;
             Start = start;
             End = end;
@@ -32,6 +33,21 @@ namespace P4FormsTest2
             NumberOfGuests = numberOfAdults + numberOfChildren;
             TotalId = TotalId + 1;
             Id = TotalId; 
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}   |   {Start.ToString("dd/MM")} - {End.ToString("dd/MM")}";
+        }
+
+        public static string UpperFirst(string String)
+        {
+            return char.ToUpper(String[0]) + String.Substring(1);
+        }
+
+        private string SplitPhoneNumber(string Number)
+        {
+            return Regex.Replace(Number, ".{2}", "$0 ");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace P4FormsTest2
 {
-    partial class Form1
+    partial class ReservationsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.testLabel = new System.Windows.Forms.Label();
+            this.gueButton = new System.Windows.Forms.Button();
+            this.hotButton = new System.Windows.Forms.Button();
+            this.resButton = new System.Windows.Forms.Button();
             this.resPanel = new System.Windows.Forms.Panel();
             this.hotPanel = new System.Windows.Forms.Panel();
             this.guePanel = new System.Windows.Forms.Panel();
@@ -46,7 +49,6 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.increaseWeekBtn = new System.Windows.Forms.Button();
             this.newResButton = new System.Windows.Forms.Button();
-            this.newRoomBtn = new System.Windows.Forms.Button();
             this.weekNumberLabel = new System.Windows.Forms.Label();
             this.decreaseWeekBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,11 +59,8 @@
             this.tuesdayDateLabel = new System.Windows.Forms.Label();
             this.mondayDateLabel = new System.Windows.Forms.Label();
             this.sundayDateLabel = new System.Windows.Forms.Label();
-            this.resButton = new System.Windows.Forms.Button();
-            this.hotButton = new System.Windows.Forms.Button();
-            this.gueButton = new System.Windows.Forms.Button();
-            this.testLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
             this.resPanel.SuspendLayout();
             this.hotPanel.SuspendLayout();
             this.guePanel.SuspendLayout();
@@ -69,30 +68,55 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // testLabel
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.resPanel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.resButton, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.hotButton, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gueButton, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.testLabel, 4, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 661);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(787, 0);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(0, 13);
+            this.testLabel.TabIndex = 5;
+            // 
+            // gueButton
+            // 
+            this.gueButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.gueButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gueButton.ForeColor = System.Drawing.Color.White;
+            this.gueButton.Location = new System.Drawing.Point(591, 3);
+            this.gueButton.Name = "gueButton";
+            this.gueButton.Size = new System.Drawing.Size(190, 69);
+            this.gueButton.TabIndex = 4;
+            this.gueButton.Text = "Guest Management";
+            this.gueButton.UseVisualStyleBackColor = false;
+            this.gueButton.Click += new System.EventHandler(this.gueButton_Click);
+            // 
+            // hotButton
+            // 
+            this.hotButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.hotButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotButton.ForeColor = System.Drawing.Color.White;
+            this.hotButton.Location = new System.Drawing.Point(395, 3);
+            this.hotButton.Name = "hotButton";
+            this.hotButton.Size = new System.Drawing.Size(190, 69);
+            this.hotButton.TabIndex = 3;
+            this.hotButton.Text = "Hotel Overview";
+            this.hotButton.UseVisualStyleBackColor = false;
+            this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
+            // 
+            // resButton
+            // 
+            this.resButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.resButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resButton.ForeColor = System.Drawing.Color.White;
+            this.resButton.Location = new System.Drawing.Point(199, 3);
+            this.resButton.Name = "resButton";
+            this.resButton.Size = new System.Drawing.Size(190, 69);
+            this.resButton.TabIndex = 2;
+            this.resButton.Text = "Reservations";
+            this.resButton.UseVisualStyleBackColor = false;
+            this.resButton.Click += new System.EventHandler(this.resButton_Click);
             // 
             // resPanel
             // 
@@ -145,6 +169,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(978, 580);
             this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel4
             // 
@@ -317,7 +342,6 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.56701F));
             this.tableLayoutPanel5.Controls.Add(this.increaseWeekBtn, 4, 0);
             this.tableLayoutPanel5.Controls.Add(this.newResButton, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.newRoomBtn, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.weekNumberLabel, 3, 0);
             this.tableLayoutPanel5.Controls.Add(this.decreaseWeekBtn, 2, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
@@ -352,22 +376,6 @@
             this.newResButton.Text = "Add Reservation";
             this.newResButton.UseVisualStyleBackColor = false;
             this.newResButton.Click += new System.EventHandler(this.newResButton_Click);
-            // 
-            // newRoomBtn
-            // 
-            this.newRoomBtn.BackColor = System.Drawing.Color.DarkCyan;
-            this.newRoomBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newRoomBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.newRoomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newRoomBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.newRoomBtn.Location = new System.Drawing.Point(147, 3);
-            this.newRoomBtn.Name = "newRoomBtn";
-            this.newRoomBtn.Size = new System.Drawing.Size(106, 31);
-            this.newRoomBtn.TabIndex = 4;
-            this.newRoomBtn.Text = "Add Room";
-            this.newRoomBtn.UseVisualStyleBackColor = false;
-            this.newRoomBtn.Click += new System.EventHandler(this.newRoomBtn_Click);
             // 
             // weekNumberLabel
             // 
@@ -494,65 +502,110 @@
             this.sundayDateLabel.Text = "datelabel";
             this.sundayDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // resButton
+            // tableLayoutPanel1
             // 
-            this.resButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.resButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resButton.ForeColor = System.Drawing.Color.White;
-            this.resButton.Location = new System.Drawing.Point(199, 3);
-            this.resButton.Name = "resButton";
-            this.resButton.Size = new System.Drawing.Size(190, 69);
-            this.resButton.TabIndex = 2;
-            this.resButton.Text = "Reservations";
-            this.resButton.UseVisualStyleBackColor = false;
-            this.resButton.Click += new System.EventHandler(this.resButton_Click);
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.resPanel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.resButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.hotButton, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gueButton, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.testLabel, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 661);
+            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // hotButton
+            // label9
             // 
-            this.hotButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.hotButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hotButton.ForeColor = System.Drawing.Color.White;
-            this.hotButton.Location = new System.Drawing.Point(395, 3);
-            this.hotButton.Name = "hotButton";
-            this.hotButton.Size = new System.Drawing.Size(190, 69);
-            this.hotButton.TabIndex = 3;
-            this.hotButton.Text = "Hotel Overview";
-            this.hotButton.UseVisualStyleBackColor = false;
-            this.hotButton.Click += new System.EventHandler(this.hotButton_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "label9";
             // 
-            // gueButton
-            // 
-            this.gueButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.gueButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gueButton.ForeColor = System.Drawing.Color.White;
-            this.gueButton.Location = new System.Drawing.Point(591, 3);
-            this.gueButton.Name = "gueButton";
-            this.gueButton.Size = new System.Drawing.Size(190, 69);
-            this.gueButton.TabIndex = 4;
-            this.gueButton.Text = "Guest Management";
-            this.gueButton.UseVisualStyleBackColor = false;
-            this.gueButton.Click += new System.EventHandler(this.gueButton_Click);
-            // 
-            // testLabel
-            // 
-            this.testLabel.AutoSize = true;
-            this.testLabel.Location = new System.Drawing.Point(787, 0);
-            this.testLabel.Name = "testLabel";
-            this.testLabel.Size = new System.Drawing.Size(0, 13);
-            this.testLabel.TabIndex = 5;
-            // 
-            // Form1
+            // ReservationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "ReservationsForm";
             this.Text = "Hotel Management System";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.resPanel.ResumeLayout(false);
             this.hotPanel.ResumeLayout(false);
             this.guePanel.ResumeLayout(false);
@@ -563,20 +616,22 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel resPanel;
-        private System.Windows.Forms.Button resButton;
-        private System.Windows.Forms.Button hotButton;
+        private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.Button gueButton;
+        private System.Windows.Forms.Button hotButton;
+        private System.Windows.Forms.Button resButton;
+        private System.Windows.Forms.Panel resPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel hotPanel;
         private System.Windows.Forms.Panel guePanel;
-        private System.Windows.Forms.Label testLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -591,7 +646,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button increaseWeekBtn;
         private System.Windows.Forms.Button newResButton;
-        private System.Windows.Forms.Button newRoomBtn;
         private System.Windows.Forms.Label weekNumberLabel;
         private System.Windows.Forms.Button decreaseWeekBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -602,6 +656,7 @@
         private System.Windows.Forms.Label tuesdayDateLabel;
         private System.Windows.Forms.Label mondayDateLabel;
         private System.Windows.Forms.Label sundayDateLabel;
+        private System.Windows.Forms.Label label9;
     }
 }
 

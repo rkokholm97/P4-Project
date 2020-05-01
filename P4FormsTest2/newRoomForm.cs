@@ -14,8 +14,8 @@ namespace P4FormsTest2
 {
     public partial class NewRoomForm : Form
     {
-        Form1 Form1 { get; set; }
-        public NewRoomForm(Form1 form1)
+        ReservationsForm Form1 { get; set; }
+        public NewRoomForm(ReservationsForm form1)
         {
             InitializeComponent();
             Form1 = form1;

@@ -14,9 +14,9 @@ namespace P4FormsTest2
 {
     public partial class GuestmanagementForm : Form
     {
-        public Form1 WinForm1 { get; set; }
+        public ReservationsForm WinForm1 { get; set; }
         public List<Reservation> reservations = new List<Reservation>();
-        public GuestmanagementForm(Form1 winForm1)
+        public GuestmanagementForm(ReservationsForm winForm1)
         {
             WinForm1 = winForm1;
             InitializeComponent();
@@ -30,12 +30,13 @@ namespace P4FormsTest2
             SetColor(FutureButton, Color.Gainsboro, Color.Black);
             SetColor(PreviousButton, Color.Gainsboro, Color.Black);
             SetColor(CurrentButton, Color.Gainsboro, Color.Black);
+            label1.Text = DateTime.Now.ToString();
         }
 
         private void resButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 reservationsform = new Form1();
+            ReservationsForm reservationsform = new ReservationsForm();
             reservationsform.Closed += (s, args) => this.Close();
             reservationsform.Show();
         }
@@ -69,7 +70,7 @@ namespace P4FormsTest2
 
         private void ClearRows()
         {
-            do
+            /*do
             {
                 foreach (DataGridViewRow row in GuestListGrid.Rows)
                 {
@@ -79,7 +80,9 @@ namespace P4FormsTest2
                     }
                     catch (Exception) { }
                 }
-            } while (GuestListGrid.Rows.Count > 1);
+            } while (GuestListGrid.Rows.Count > 1);*/
+
+            GuestListGrid.Rows.Clear();
         }
 
         private void CurrentButton_Click(object sender, EventArgs e)
@@ -87,7 +90,7 @@ namespace P4FormsTest2
             ClearRows();
             foreach(Reservation reservation in reservations)
             {
-                if(DateTime.Now > reservation.Start && DateTime.Now < reservation.End)
+                if(DateTime.Now >= reservation.Start && DateTime.Now <= reservation.End)
                 {
                     GuestListGrid.Rows.Add(reservation.Name, reservation.Room.Number.ToString(), reservation.NumberOfGuests.ToString(), reservation.Start.ToString("dd/MM/yyyy"), reservation.End.ToString("dd/MM/yyyy"));
                 }
@@ -103,7 +106,7 @@ namespace P4FormsTest2
         {
             ClearRows();
             foreach (Reservation reservation in reservations)
-            {
+            {      
                 if (DateTime.Now > reservation.End)
                 {
                     GuestListGrid.Rows.Add(reservation.Name, reservation.Room.Number.ToString(), reservation.NumberOfGuests.ToString(), reservation.Start.ToString("dd/MM/yyyy"), reservation.End.ToString("dd/MM/yyyy"));

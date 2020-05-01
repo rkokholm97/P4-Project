@@ -16,8 +16,8 @@ namespace P4FormsTest2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 winForm1 = new Form1();
-            Application.Run(winForm1);
+            LoginForm loginform = new LoginForm();
+            Application.Run(loginform);
         }
     }
 }

@@ -13,22 +13,24 @@ using System.Globalization;
 
 namespace P4FormsTest2
 {
-    public partial class Form1 : Form
+    public partial class ReservationsForm : Form
     {
         public List<Reservation> reservations { get; set; } = new List<Reservation>();
         public List<Reservation> relevantReservations { get; set; } = new List<Reservation>();
         public List<Room> rooms { get; set; } = new List<Room>();
+        public User LoggedInUser { get; set; }
         public DateTime WeekShownStart;
         public DateTime WeekShownEnd;
         public int CurrentWeek;
 
-        public Form1()
+        public ReservationsForm()
         {
+            //LoggedInUser = user;
             InitializeComponent();
         }
 
         public void Form1_Load(object sender, EventArgs e)
-        {
+        {      
             reservations = JsonConvert.DeserializeObject<List<Reservation>>(File.ReadAllText(@"..\..\..\reservations.json"));
             rooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"..\..\..\rooms.json"));
 
@@ -49,9 +51,8 @@ namespace P4FormsTest2
             weekNumberLabel.Text = "Week " + CurrentWeek.ToString();
 
             rooms.Sort();
-            printReservations();
             printRooms();
-
+            printReservations();
         }
 
         private void resButton_Click(object sender, EventArgs e)
@@ -107,13 +108,12 @@ namespace P4FormsTest2
                 
                 int i = 0;
                 DayOfWeek day;
+                int startColoumn = 1;
+                int endColoumn = 1;
                 foreach (Reservation reservation in relevantReservations)
                 {
-                    int startColoumn;
-                    int endColoumn;
                     if (reservation.Start <= WeekShownStart)
                     {
-                        day = reservation.Start.DayOfWeek;
                         startColoumn = 1;
                     } else
                     {
@@ -185,8 +185,9 @@ namespace P4FormsTest2
                     Button b = new Button();
                     b.Dock = DockStyle.Fill;
                     //b.Text = reservation.Name;
-                    b.Text = reservation.Start.ToString("dd/MM") + " - " + reservation.End.ToString("dd/MM");
+                    b.Text = reservation.ToString();
                     b.Name = reservation.Id.ToString();
+                    b.Margin = new Padding(0,0,0,0);
                     b.Click += new EventHandler(resViewButton_Click);
 
                     int row = 0;
@@ -206,14 +207,14 @@ namespace P4FormsTest2
                     }
 
                     tableLayoutPanel4.Controls.Add(b, startColoumn, row);
-                    tableLayoutPanel4.SetColumnSpan(b, endColoumn - startColoumn + 1);
+                    //something is completely fucking wrong with this bit. If the value of endColumn - startColumn + is less than 2 it just wont fucking react and the result ends up being nothing.
+                    //which leads to a button with a span of 0. In other words - you cant see the button of any reservation that starts and ends on the same day.
+                    //also whenever something spans from ex. Monday-Monday the week after, you cant see the 1-day span in the last week.
+                    int span = (endColoumn - startColoumn) + 1;                    
+                    tableLayoutPanel4.SetColumnSpan(b, span);              
                     i++;
-                }
-            } else
-            {
-
+                }   
             }
-
         }
         public void printRooms()
         {
@@ -283,10 +284,10 @@ namespace P4FormsTest2
         }
 
         private void decreaseWeekBtn_Click(object sender, EventArgs e)
-        {
-            GetCurrentWeek();
+        {        
             WeekShownStart = WeekShownStart.AddDays(-7);
             WeekShownEnd = WeekShownEnd.AddDays(-7);
+            GetCurrentWeek();
             weekNumberLabel.Text = "Week " + CurrentWeek.ToString();
 
             mondayDateLabel.Text = WeekShownStart.ToString("dd/MM");
@@ -300,8 +301,7 @@ namespace P4FormsTest2
         }
 
         private void increaseWeekBtn_Click(object sender, EventArgs e)
-        {
-            
+        {      
             WeekShownStart = WeekShownStart.AddDays(7);
             WeekShownEnd = WeekShownEnd.AddDays(7);
             GetCurrentWeek();
@@ -362,12 +362,22 @@ namespace P4FormsTest2
             List<Reservation> updatedReservations = new List<Reservation>();        
             foreach (Reservation reservation in reservations)
             {
-                if ((reservation.Start >= WeekShownStart && reservation.Start <= WeekShownEnd) || (reservation.End <= WeekShownEnd && reservation.End > WeekShownStart))
+                if ((reservation.Start >= WeekShownStart && reservation.Start <= WeekShownEnd) || (reservation.End <= WeekShownEnd && reservation.End > WeekShownStart || (WeekShownStart > reservation.Start && WeekShownEnd < reservation.End)))
                 {
                     updatedReservations.Add(reservation);
                 }
             }
             relevantReservations = updatedReservations;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

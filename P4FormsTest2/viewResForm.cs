@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace P4FormsTest2
 {
     public partial class viewResForm : Form
     {
         Reservation r { get; set; }
-        Form1 form1;
+        ReservationsForm form1;
         Button button;
-        public viewResForm(Reservation reservation, Form1 form, Button btn)
+        public viewResForm(Reservation reservation, ReservationsForm form, Button btn)
         {
             InitializeComponent();
             r = reservation;
@@ -34,10 +35,11 @@ namespace P4FormsTest2
             viewResAdultsAmount.Text = r.NumberOfAdults.ToString();
             viewResChildrenAmount.Text = r.NumberOfChildren.ToString();
             viewResTotalGuestsAmount.Text = r.NumberOfGuests.ToString();
-            viewResStartLabel.Text = r.Start.ToString();
-            viewResEndLabel.Text = r.End.ToString();
+            CultureInfo culture = new CultureInfo("en-US");
+            viewResStartLabel.Text = Reservation.UpperFirst(r.Start.ToString("dddd, dd MMMM, yyyy", culture));
+            viewResEndLabel.Text = Reservation.UpperFirst(r.End.ToString("dddd, dd MMMM, yyyy", culture));
             viewResRoomLabel.Text = r.Room.Number.ToString();
-            this.Text = "Reservation Detals - Reservation ID " + r.Id.ToString();
+            this.Text = "Reservation Details - Reservation ID " + r.Id.ToString();
         }
 
         private void testBtn_Click(object sender, EventArgs e)
@@ -68,6 +70,12 @@ namespace P4FormsTest2
                     break;
                 }
             }
+        }
+
+        private void viewResEditBtn_Click(object sender, EventArgs e)
+        {
+            EditReservationForm form = new EditReservationForm(form1, r);
+            form.Show();
         }
     }
 }

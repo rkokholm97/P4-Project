@@ -64,7 +64,12 @@ namespace P4FormsTest2
             Rooms.Reverse();
             int floorcount = Convert.ToInt32(Math.Floor(Convert.ToDouble(Rooms[0].Number) / 100 + 1));
             label1.Text = floorcount.ToString();
+
+            TableLayoutPanel floorTablePanel = new TableLayoutPanel();
+            floorTablePanel.AutoScroll = true;
             floorTablePanel.RowCount = floorcount * 2;
+
+            tableLayoutPanel2.Controls.Add(floorTablePanel, 0, 1);
 
             for(int i = 0; i < floorTablePanel.RowCount; i++)
             {
@@ -118,6 +123,22 @@ namespace P4FormsTest2
                     flowLayoutPanel2.Controls.Add(newButton);
                 }
             }*/
+        }
+
+        private void newRoomBtn_Click(object sender, EventArgs e)
+        {
+            NewRoomForm newRoomForm = new NewRoomForm(ReservationsForm);
+            newRoomForm.Show();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace P4FormsTest2
 {
@@ -34,8 +35,9 @@ namespace P4FormsTest2
             viewResAdultsAmount.Text = r.NumberOfAdults.ToString();
             viewResChildrenAmount.Text = r.NumberOfChildren.ToString();
             viewResTotalGuestsAmount.Text = r.NumberOfGuests.ToString();
-            viewResStartLabel.Text = r.Start.ToString("dddd, dd MMMM yyyy");
-            viewResEndLabel.Text = r.End.ToString("dddd, dd MMMM yyyy");
+            CultureInfo culture = new CultureInfo("en-US");
+            viewResStartLabel.Text = Reservation.UpperFirst(r.Start.ToString("dddd, dd MMMM, yyyy", culture));
+            viewResEndLabel.Text = Reservation.UpperFirst(r.End.ToString("dddd, dd MMMM, yyyy", culture));
             viewResRoomLabel.Text = r.Room.Number.ToString();
             this.Text = "Reservation Details - Reservation ID " + r.Id.ToString();
         }

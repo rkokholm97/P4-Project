@@ -54,5 +54,12 @@
     "MaxOccupants": 0,
     "Floor": 4,
     "RowNumber": 0
+  },
+  {
+    "Number": 402,
+    "IsSuite": false,
+    "MaxOccupants": 2,
+    "Floor": 4,
+    "RowNumber": 0
   }
 ]

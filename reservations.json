@@ -1,16 +1,16 @@
 [
   {
     "Id": 1,
-    "Name": "asd",
+    "Name": "Jens Jensen",
     "Room": {
-      "Number": 103,
+      "Number": 101,
       "IsSuite": false,
       "MaxOccupants": 0,
       "Floor": 1,
       "RowNumber": 0
     },
-    "Start": "2020-04-27T00:00:00+02:00",
-    "End": "2020-04-29T00:00:00",
+    "Start": "2020-04-27T00:00:00",
+    "End": "2020-04-28T00:00:00",
     "NumberOfGuests": 2,
     "NumberOfAdults": 2,
     "NumberOfChildren": 0,
@@ -19,43 +19,7 @@
   },
   {
     "Id": 2,
-    "Name": "asddsd",
-    "Room": {
-      "Number": 103,
-      "IsSuite": false,
-      "MaxOccupants": 0,
-      "Floor": 1,
-      "RowNumber": 0
-    },
-    "Start": "2020-05-01T00:00:00",
-    "End": "2020-05-04T00:00:00",
-    "NumberOfGuests": 0,
-    "NumberOfAdults": 0,
-    "NumberOfChildren": 0,
-    "PhoneNumber": "d",
-    "Email": "sdsd"
-  },
-  {
-    "Id": 3,
-    "Name": "Rasmus",
-    "Room": {
-      "Number": 101,
-      "IsSuite": false,
-      "MaxOccupants": 0,
-      "Floor": 1,
-      "RowNumber": 0
-    },
-    "Start": "2020-04-28T00:00:00",
-    "End": "2020-05-02T00:00:00",
-    "NumberOfGuests": 0,
-    "NumberOfAdults": 2,
-    "NumberOfChildren": 0,
-    "PhoneNumber": "asd",
-    "Email": "asd"
-  },
-  {
-    "Id": 4,
-    "Name": "ad",
+    "Name": "Asd",
     "Room": {
       "Number": 102,
       "IsSuite": false,
@@ -63,12 +27,12 @@
       "Floor": 1,
       "RowNumber": 0
     },
-    "Start": "2020-04-22T00:00:00",
-    "End": "2020-05-08T00:00:00",
-    "NumberOfGuests": 0,
-    "NumberOfAdults": 0,
+    "Start": "2020-04-27T00:00:00",
+    "End": "2020-05-04T00:00:00",
+    "NumberOfGuests": 2,
+    "NumberOfAdults": 2,
     "NumberOfChildren": 0,
-    "PhoneNumber": "ds",
-    "Email": "ds"
+    "PhoneNumber": "asd",
+    "Email": "asd"
   }
 ]

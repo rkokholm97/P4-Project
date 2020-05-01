@@ -46,6 +46,7 @@
             this.gueButton = new System.Windows.Forms.Button();
             this.testLabel = new System.Windows.Forms.Label();
             this.floorTablePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.resPanel.SuspendLayout();
             this.hotPanel.SuspendLayout();
@@ -67,6 +68,7 @@
             this.tableLayoutPanel1.Controls.Add(this.hotButton, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.gueButton, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.testLabel, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -250,9 +252,9 @@
             // floorTablePanel
             // 
             this.floorTablePanel.AutoScroll = true;
+            this.floorTablePanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.floorTablePanel.ColumnCount = 1;
-            this.floorTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.floorTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.floorTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.floorTablePanel.Location = new System.Drawing.Point(3, 3);
             this.floorTablePanel.Name = "floorTablePanel";
             this.floorTablePanel.RowCount = 2;
@@ -260,6 +262,15 @@
             this.floorTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.floorTablePanel.Size = new System.Drawing.Size(882, 574);
             this.floorTablePanel.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
             // 
             // HoteloverviewForm
             // 
@@ -270,6 +281,7 @@
             this.Name = "HoteloverviewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "hoteloverview";
+            this.Load += new System.EventHandler(this.HoteloverviewForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.resPanel.ResumeLayout(false);
@@ -301,5 +313,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TableLayoutPanel floorTablePanel;
+        private System.Windows.Forms.Label label1;
     }
 }

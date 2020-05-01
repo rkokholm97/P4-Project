@@ -37,7 +37,7 @@
   },
   {
     "Id": 3,
-    "Name": "asd",
+    "Name": "Rasmus",
     "Room": {
       "Number": 101,
       "IsSuite": false,
@@ -46,9 +46,9 @@
       "RowNumber": 0
     },
     "Start": "2020-04-28T00:00:00",
-    "End": "2020-04-30T00:00:00",
+    "End": "2020-05-02T00:00:00",
     "NumberOfGuests": 0,
-    "NumberOfAdults": 0,
+    "NumberOfAdults": 2,
     "NumberOfChildren": 0,
     "PhoneNumber": "asd",
     "Email": "asd"

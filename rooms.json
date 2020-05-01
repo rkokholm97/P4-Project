@@ -19,5 +19,40 @@
     "MaxOccupants": 0,
     "Floor": 1,
     "RowNumber": 0
+  },
+  {
+    "Number": 201,
+    "IsSuite": false,
+    "MaxOccupants": 3,
+    "Floor": 2,
+    "RowNumber": 0
+  },
+  {
+    "Number": 202,
+    "IsSuite": false,
+    "MaxOccupants": 3,
+    "Floor": 2,
+    "RowNumber": 0
+  },
+  {
+    "Number": 301,
+    "IsSuite": false,
+    "MaxOccupants": 0,
+    "Floor": 3,
+    "RowNumber": 0
+  },
+  {
+    "Number": 302,
+    "IsSuite": false,
+    "MaxOccupants": 0,
+    "Floor": 3,
+    "RowNumber": 0
+  },
+  {
+    "Number": 401,
+    "IsSuite": false,
+    "MaxOccupants": 0,
+    "Floor": 4,
+    "RowNumber": 0
   }
 ]

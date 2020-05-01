@@ -37,7 +37,7 @@ namespace P4FormsTest2
             viewResStartLabel.Text = r.Start.ToString();
             viewResEndLabel.Text = r.End.ToString();
             viewResRoomLabel.Text = r.Room.Number.ToString();
-            this.Text = "Reservation Detals - Reservation ID " + r.Id.ToString();
+            this.Text = "Reservation Details - Reservation ID " + r.Id.ToString();
         }
 
         private void testBtn_Click(object sender, EventArgs e)
@@ -68,6 +68,12 @@ namespace P4FormsTest2
                     break;
                 }
             }
+        }
+
+        private void viewResEditBtn_Click(object sender, EventArgs e)
+        {
+            EditReservationForm form = new EditReservationForm(form1, r);
+            form.Show();
         }
     }
 }

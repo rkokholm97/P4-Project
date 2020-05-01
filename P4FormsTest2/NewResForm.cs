@@ -34,7 +34,6 @@ namespace P4FormsTest2
             }
 
             this.Controls.Add(roomSelectionField);
-
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -60,12 +60,46 @@ namespace P4FormsTest2
 
         private void HoteloverviewForm_Load(object sender, EventArgs e)
         {
-            /*foreach(Room room in Rooms)
-            {
-                if(room.Number)
-            } /*
+            Rooms.Sort();
+            Rooms.Reverse();
+            int floorcount = Convert.ToInt32(Math.Floor(Convert.ToDouble(Rooms[0].Number) / 100 + 1));
+            label1.Text = floorcount.ToString();
+            floorTablePanel.RowCount = floorcount * 2;
 
-            for (int i = 0; i < 3; i++)
+            for(int i = 0; i < floorTablePanel.RowCount; i++)
+            {
+                if(i%2 == 0)
+                {
+                    Label floorLabel = new Label();
+                    //floorLabel.Text = "Floor" + i.ToString();
+                    floorLabel.Text = "Floor x";
+                    floorTablePanel.Controls.Add(floorLabel);
+                } else
+                {
+                    TableLayoutPanel roomstable = new TableLayoutPanel();
+                    roomstable.ColumnCount = 8;
+                    roomstable.Dock = DockStyle.Fill;
+                    roomstable.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+                    TableLayoutStyleCollection styles = roomstable.ColumnStyles;
+                    roomstable.RowCount = 3;
+
+                    foreach(ColumnStyle style in styles)
+                    {
+                        style.SizeType = SizeType.Percent;
+                        style.Width = 50;
+                    }
+                    foreach(RowStyle style in styles)
+                    {
+                        style.SizeType = SizeType.Absolute;
+                        style.Height = 20;
+                    }
+
+                    floorTablePanel.Controls.Add(roomstable);
+                }
+
+            }
+
+            /*for (int i = 0; i < floorcount; i++)
             {
                 string roomNumberString = Convert.ToString(Rooms[i].Number);
                 Button newButton = new Button();
@@ -74,7 +108,7 @@ namespace P4FormsTest2
                 newButton.Width = 80;
                 newButton.Height = 80;
                 floorTablePanel.Controls.Add(newButton);
-                /*if (roomNumberString[0] == '1')
+                if (roomNumberString[0] == '1')
                 {
                     Button newButton = new Button();
                     newButton.Text = (roomNumberString + "\n\n" + "AVA");
@@ -82,8 +116,8 @@ namespace P4FormsTest2
                     newButton.Width = 80;
                     newButton.Height = 80;
                     flowLayoutPanel2.Controls.Add(newButton);
-                }*/
-            }
+                }
+            }*/
         }
     }
 }

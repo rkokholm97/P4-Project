@@ -18,12 +18,14 @@ namespace P4FormsTest2
         public List<Reservation> reservations { get; set; } = new List<Reservation>();
         public List<Reservation> relevantReservations { get; set; } = new List<Reservation>();
         public List<Room> rooms { get; set; } = new List<Room>();
+        public User LoggedInUser { get; set; }
         public DateTime WeekShownStart;
         public DateTime WeekShownEnd;
         public int CurrentWeek;
 
         public ReservationsForm()
         {
+            //LoggedInUser = user;
             InitializeComponent();
         }
 
@@ -51,7 +53,6 @@ namespace P4FormsTest2
             rooms.Sort();
             printRooms();
             printReservations();
-            
         }
 
         private void resButton_Click(object sender, EventArgs e)
@@ -368,6 +369,16 @@ namespace P4FormsTest2
                 }
             }
             relevantReservations = updatedReservations;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

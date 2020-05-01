@@ -49,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReservationForm.Designer.cs">
+      <DependentUpon>EditReservationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guest.cs" />
     <Compile Include="GuestmanagementForm.cs">
       <SubType>Form</SubType>
@@ -61,6 +70,12 @@
     </Compile>
     <Compile Include="HoteloverviewForm.Designer.cs">
       <DependentUpon>HoteloverviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewRoomForm.cs">
       <SubType>Form</SubType>
@@ -96,12 +111,19 @@
     <Compile Include="ShowErrorMessage.Designer.cs">
       <DependentUpon>ShowErrorMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="viewResForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewResForm.Designer.cs">
       <DependentUpon>viewResForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditReservationForm.resx">
+      <DependentUpon>EditReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReservationsForm.resx">
       <DependentUpon>ReservationsForm.cs</DependentUpon>
     </EmbeddedResource>

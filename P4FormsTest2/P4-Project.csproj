@@ -62,6 +62,12 @@
     <Compile Include="HoteloverviewForm.Designer.cs">
       <DependentUpon>HoteloverviewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm.Designer.cs">
+      <DependentUpon>MasterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -14,11 +14,11 @@ namespace P4FormsTest2
 {
     public partial class NewRoomForm : Form
     {
-        ReservationsForm Form1 { get; set; }
-        public NewRoomForm(ReservationsForm form1)
+        HoteloverviewForm HoteloverviewForm { get; set; }
+        public NewRoomForm(HoteloverviewForm form1)
         {
             InitializeComponent();
-            Form1 = form1;
+            HoteloverviewForm = form1;
         }
 
         public void NewRoomForm_Load(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace P4FormsTest2
                     issuite = true;
                 }
                 int rownumber = 0;
-                foreach(Room room in Form1.rooms)
+                foreach(Room room in HoteloverviewForm.Rooms)
                 {
                     if (floor == room.Floor)
                     {
@@ -58,23 +58,12 @@ namespace P4FormsTest2
                 }
 
                 Room r = new Room(roomnumber, issuite, maxoccupants, floor, rownumber);
-                Form1.rooms.Add(r);
+                HoteloverviewForm.Rooms.Add(r);
+                HoteloverviewForm.Rooms.Sort();
 
-                Form1.rooms.Sort();
-
-                Form1.printRooms();
-                /*int i = Form1.rooms.Count() - 1;
-                Label l = new Label();
-                l.Dock = DockStyle.Fill;
-                l.Text = r.Number.ToString();
-                l.Font = new Font(l.Font, FontStyle.Bold);
-                l.TextAlign = ContentAlignment.MiddleCenter;
-                l.Name = "roomLabel " + r.Number.ToString();
-                Form1.tableLayoutPanel4.Controls.Add(l, 0, i);
-                Form1.tableLayoutPanel4.SetColumnSpan(l, 1);*/
-
-                File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(Form1.rooms, Formatting.Indented));
-
+                File.WriteAllText(@"..\..\..\rooms.json", JsonConvert.SerializeObject(HoteloverviewForm.Rooms, Formatting.Indented));
+                HoteloverviewForm.printRooms();
+                HoteloverviewForm.printFloorButtonPanel();
                 this.Close();
             }
             catch (Exception)

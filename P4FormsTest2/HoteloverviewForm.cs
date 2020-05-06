@@ -9,6 +9,8 @@ namespace P4FormsTest2
     {
         public ReservationsForm ReservationsForm { get; set; }
         public List<Room> Rooms { get; set; }
+
+        public TableLayoutPanel buttonTablePanel { get; set; } = new TableLayoutPanel();
         
         public HoteloverviewForm(ReservationsForm winForm1)
         {
@@ -61,96 +63,52 @@ namespace P4FormsTest2
         private void HoteloverviewForm_Load(object sender, EventArgs e)
         {
             Rooms.Sort();
-            Rooms.Reverse();
+            printFloorButtonPanel();
+            printRooms();
 
-            //get the amount of floors
-            int floorcount = Convert.ToInt32(Math.Floor(Convert.ToDouble(Rooms[0].Number) / 100 + 1));
+            int vertScrollWidth = SystemInformation.VerticalScrollBarWidth;
 
-            //create two containers that are tablelayoutpanels for the floor overview and the button grid. Add to tablelayoutpanel2.
+            floorTablePanel.Padding = new Padding(0, 0, vertScrollWidth, 0);
+            floorTablePanel.ScrollControlIntoView(floorTable_0);
 
-            floorTablePanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            floorTablePanel.MaximumSize = new Size(floorTablePanel.Width, floorTablePanel.Height);
-            floorTablePanel.AutoScroll = true;
+        }
 
-            for (int i = 0; i < floorTablePanel.RowCount; i++)
+        private void scrollToFloor(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string floornumber = button.Text.Split(' ')[1];
+            string tablename = "floorTable_" + floornumber;
+            TableLayoutPanel table;
+
+            foreach(Control control in floorTablePanel.Controls)
             {
-                floorTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 100));
+                if(control is TableLayoutPanel && control.Name == tablename)
+                {
+                    table = (TableLayoutPanel)control;
+                    floorTablePanel.ScrollControlIntoView(table);
+                }
+            }        
+        }
+
+        private void viewRoomInfo(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Room r = null;
+            foreach(Room room in Rooms)
+            {
+                if(room.Number == Int32.Parse(button.Name.Split('_')[1]))
+                {
+                    r = room;
+                }
             }
 
-            TableLayoutPanel buttonTablePanel = new TableLayoutPanel();
-            buttonTablePanel.ColumnCount = 1;
-            buttonTablePanel.RowCount = floorcount;
-            buttonTablePanel.AutoScroll = true;
-            buttonTablePanel.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Controls.Add(buttonTablePanel, 1, 0);
-
-            //Create a button for each floor and add to the button grid
-            int floornumberButton = floorcount - 1;
-            for (int i = 0; i < buttonTablePanel.RowCount; i++)
-            {
-                buttonTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 80));
-                Button b = new Button();
-                b.Text = "Floor " + floornumberButton.ToString();
-                b.Dock = DockStyle.Top;
-                b.Height = 80;
-                buttonTablePanel.Controls.Add(b, 0, i);
-                floornumberButton--;
-            }
-            //Create a subgrid and label for each floor. Add both to the floorTabelPanel.
-            int x = floorcount - 1;
-            for (int i = 0; i < floorcount*2; i++)
-            {
-                /*Label l = new Label();
-                l.Text = "Floor" + x.ToString();
-                floorPanel.Controls.Add(l);*/
-                TableLayoutPanel roomstable = new TableLayoutPanel();
-                roomstable.ColumnCount = 8;
-                roomstable.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-                roomstable.RowCount = 3;
-                //roomstable.Dock = DockStyle.Top;
-
-                for (int j = 0; j < roomstable.ColumnCount; j++)
-                {
-                    roomstable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
-                }
-                    
-                for (int j = 0; j < roomstable.RowCount; j++)
-                {
-                    //roomstable.RowStyles.Add(new RowStyle(SizeType.Percent, 33));
-                    roomstable.RowStyles.Add(new RowStyle(SizeType.Absolute, 80));
-                    /*Button b = new Button();
-                    b.Text = "test";
-                    roomstable.Controls.Add(b,0,j);*/
-                }
-                    
-                //floorPanel.Controls.Add(roomstable);                     
-            }
-            
-
-            /*for (int i = 0; i < floorcount; i++)
-            {
-                string roomNumberString = Convert.ToString(Rooms[i].Number);
-                Button newButton = new Button();
-                newButton.Text = (roomNumberString + "\n\n" + "AVA");
-                newButton.BackColor = Color.Green;
-                newButton.Width = 80;
-                newButton.Height = 80;
-                floorTablePanel.Controls.Add(newButton);
-                if (roomNumberString[0] == '1')
-                {
-                    Button newButton = new Button();
-                    newButton.Text = (roomNumberString + "\n\n" + "AVA");
-                    newButton.BackColor = Color.Green;
-                    newButton.Width = 80;
-                    newButton.Height = 80;
-                    flowLayoutPanel2.Controls.Add(newButton);
-                }
-            }*/
+            viewRoomForm form = new viewRoomForm(r, this);
+            form.Show();
         }
 
         private void newRoomBtn_Click(object sender, EventArgs e)
         {
-            NewRoomForm newRoomForm = new NewRoomForm(ReservationsForm);
+            NewRoomForm newRoomForm = new NewRoomForm(this);
             newRoomForm.Show();
         }
 
@@ -162,6 +120,118 @@ namespace P4FormsTest2
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void clearRoomButtons()
+        {
+            for (int i = floorTablePanel.Controls.Count - 1; i >= 0; --i)
+            {
+                if (floorTablePanel.Controls[i] is TableLayoutPanel)
+                {
+                    TableLayoutPanel table = (TableLayoutPanel)floorTablePanel.Controls[i];
+                    for (int j = table.Controls.Count - 1; j >= 0; --j)
+                    {
+                        table.Controls[j].Dispose();
+                    }               
+                }
+            }        
+        }
+
+        private void clearFloorButtonPanel()
+        {
+            for (int i = buttonTablePanel.Controls.Count - 1; i >= 0; --i)
+            {
+                buttonTablePanel.Controls[i].Dispose();
+            }
+        }
+
+        public void printRooms()
+        {
+            clearRoomButtons();
+            foreach (Room room in Rooms)
+            {
+                decimal x = Math.Floor(Convert.ToDecimal(room.Number / 100));
+                int floornumber = (int)x;
+
+                foreach (Control control in floorTablePanel.Controls)
+                {
+                    if (control is TableLayoutPanel)
+                    {
+                        string[] tableFloorNumber = control.Name.Split('_');
+                        if (floornumber == Int32.Parse(tableFloorNumber[1]))
+                        {
+                            Button b = new Button();
+                            b.Name = "room_" + room.Number.ToString();
+                            b.Text = (room.Number.ToString() + "\n\n" + "AVA");                            
+                            b.Font = new Font(b.Font, FontStyle.Bold);
+                            
+                            b.FlatStyle = FlatStyle.Flat;
+                            b.FlatAppearance.BorderColor = Color.White;
+
+                            switch(room.Status.ToString())
+                            {
+                                case "Available":
+                                    b.BackColor = Color.Green;
+                                    b.ForeColor = Color.White;
+                                    break;
+                                case "Occupied":
+                                    b.BackColor = Color.RoyalBlue;
+                                    b.ForeColor = Color.White;
+                                    break;
+                                case "Outoforder":
+                                    b.BackColor = Color.Brown;
+                                    b.ForeColor = Color.White;
+                                    break;
+                                case "Outofservice":
+                                    b.BackColor = Color.Yellow;
+                                    b.ForeColor = Color.Black;
+                                    break;
+                            }
+
+                            if (room.IsSuite == true)
+                            {
+                                b.BackColor = Color.Goldenrod;
+                                b.Font = new Font(b.Font, FontStyle.Bold);
+                                b.ForeColor = Color.Black;
+                            }
+
+                            b.Width = 80;
+                            b.Height = 80;
+                            b.Dock = DockStyle.Fill;
+                            b.Margin = new Padding(0, 0, 0, 0);
+                            b.Click += new EventHandler(viewRoomInfo);
+                            control.Controls.Add(b);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void printFloorButtonPanel()
+        {
+            clearFloorButtonPanel();
+            //get the amount of floors
+            int floorcount = Convert.ToInt32(Math.Floor(Convert.ToDouble(Rooms[Rooms.Count - 1].Number) / 100 + 1));
+
+            buttonTablePanel.ColumnCount = 1;
+            buttonTablePanel.RowCount = floorcount;
+            buttonTablePanel.AutoScroll = true;
+            buttonTablePanel.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Controls.Add(buttonTablePanel, 1, 0);
+
+            //Create a button for each floor and add to the button grid
+            int floorLabelNumber = floorcount - 1;
+            for (int i = 0; i < buttonTablePanel.RowCount; i++)
+            {
+                buttonTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
+                Button b = new Button();
+                b.Text = "Floor " + floorLabelNumber.ToString();
+                b.Dock = DockStyle.Top;
+                b.Height = 50;
+                b.Click += new EventHandler(scrollToFloor);
+                buttonTablePanel.Controls.Add(b, 0, i);
+                floorLabelNumber--;
+            }
         }
     }
 }

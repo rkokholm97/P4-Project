@@ -12,9 +12,18 @@ namespace P4FormsTest2
         public bool IsSuite { get; set; }
         public int MaxOccupants { get; set; }
 
+        public Statusnum Status { get; set; }
         public int Floor { get; set; }
 
         public int RowNumber { get; set; }
+
+        public enum Statusnum
+        {
+            Available,
+            Occupied,
+            Outoforder,
+            Outofservice
+        }
 
         public Room (int number, bool isSuite, int maxOccupants, int floor, int rowNumber)
         {
@@ -23,6 +32,7 @@ namespace P4FormsTest2
             MaxOccupants = maxOccupants;
             Floor = floor;
             RowNumber = RowNumber;
+            Status = Statusnum.Available;
         }
         public int CompareTo(object obj)
         {

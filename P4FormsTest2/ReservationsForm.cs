@@ -344,12 +344,6 @@ namespace P4FormsTest2
             CurrentWeek = calendar.GetWeekOfYear(WeekShownStart, calendarWeekRule, firstDayOfWeek);
         }
 
-        private void newRoomBtn_Click(object sender, EventArgs e)
-        {
-            NewRoomForm newRoomForm = new NewRoomForm(this);
-            newRoomForm.Show();
-        }
-
         //Clear all reservations from the grid
         private void ClearReservationButtons()
         {
@@ -380,7 +374,7 @@ namespace P4FormsTest2
             List<Reservation> updatedReservations = new List<Reservation>();        
             foreach (Reservation reservation in reservations)
             {
-                if ((reservation.Start >= WeekShownStart && reservation.Start <= WeekShownEnd) || (reservation.End <= WeekShownEnd && reservation.End > WeekShownStart || (WeekShownStart > reservation.Start && WeekShownEnd < reservation.End)))
+                if ((reservation.Start >= WeekShownStart && reservation.Start <= WeekShownEnd) || (reservation.End <= WeekShownEnd && reservation.End >= WeekShownStart || (WeekShownStart >= reservation.Start && WeekShownEnd <= reservation.End)))
                 {
                     updatedReservations.Add(reservation);
                 }

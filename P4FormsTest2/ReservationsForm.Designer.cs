@@ -60,7 +60,6 @@
             this.mondayDateLabel = new System.Windows.Forms.Label();
             this.sundayDateLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
             this.resPanel.SuspendLayout();
             this.hotPanel.SuspendLayout();
             this.guePanel.SuspendLayout();
@@ -575,7 +574,6 @@
             this.tableLayoutPanel1.Controls.Add(this.hotButton, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.gueButton, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.testLabel, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -586,15 +584,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 661);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "label9";
             // 
             // ReservationsForm
             // 
@@ -656,7 +645,6 @@
         private System.Windows.Forms.Label tuesdayDateLabel;
         private System.Windows.Forms.Label mondayDateLabel;
         private System.Windows.Forms.Label sundayDateLabel;
-        private System.Windows.Forms.Label label9;
     }
 }
 

@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -118,6 +119,12 @@
     <Compile Include="viewResForm.Designer.cs">
       <DependentUpon>viewResForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewRoomForm.Designer.cs">
+      <DependentUpon>viewRoomForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EditReservationForm.resx">
       <DependentUpon>EditReservationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewResForm.resx">
       <DependentUpon>viewResForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewRoomForm.resx">
+      <DependentUpon>viewRoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

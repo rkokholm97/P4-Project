@@ -29,8 +29,10 @@ namespace P4FormsTest2
             InitializeComponent();
         }
 
+        //Gets run once when the form is loaded
         public void Form1_Load(object sender, EventArgs e)
-        {      
+        {
+            //Load data from files
             reservations = JsonConvert.DeserializeObject<List<Reservation>>(File.ReadAllText(@"..\..\..\reservations.json"));
             rooms = JsonConvert.DeserializeObject<List<Room>>(File.ReadAllText(@"..\..\..\rooms.json"));
 
@@ -40,6 +42,7 @@ namespace P4FormsTest2
 
             GetCurrentWeek();
 
+            //Set date labels
             mondayDateLabel.Text = WeekShownStart.ToString("dd/MM");
             tuesdayDateLabel.Text = WeekShownStart.AddDays(1).ToString("dd/MM");
             wednesdayDateLabel.Text = WeekShownStart.AddDays(2).ToString("dd/MM");
@@ -59,7 +62,7 @@ namespace P4FormsTest2
         {
 
         }
-
+        //Open hotel overview window
         private void hotButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -68,6 +71,7 @@ namespace P4FormsTest2
             hoteloverviewform.Show();
         }
 
+        //Open guest management window
         private void gueButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -98,6 +102,8 @@ namespace P4FormsTest2
                 newResForm.Show();
         }
 
+        //Clear the table of reservations and print out reservations relevant to the current week
+        //Is called whenever an update is made to the reservations or the shown week - Adding, deleting or editing a reservation or changing week
         public void printReservations()
         {
             ClearReservationButtons();
@@ -112,6 +118,7 @@ namespace P4FormsTest2
                 int endColoumn = 1;
                 foreach (Reservation reservation in relevantReservations)
                 {
+                    //Set the start and end columns based on the specific reservations start and end day
                     if (reservation.Start <= WeekShownStart)
                     {
                         startColoumn = 1;
@@ -182,16 +189,17 @@ namespace P4FormsTest2
                         }
                     }
 
+                    //Create a button for the reservation
                     Button b = new Button();
                     b.Dock = DockStyle.Fill;
-                    //b.Text = reservation.Name;
                     b.Text = reservation.ToString();
                     b.Name = reservation.Id.ToString();
                     b.Margin = new Padding(0,0,0,0);
                     b.Click += new EventHandler(resViewButton_Click);
 
-                    int row = 0;
 
+                    //Find the row number which has the current rooms number
+                    int row = 0;
                     TableLayoutControlCollection table = tableLayoutPanel4.Controls;
                     for(int j = 0; j < table.Count; j++)
                     {
@@ -205,8 +213,9 @@ namespace P4FormsTest2
                             }
                         }
                     }
-
+                    //Add the button to the table at the given column start and spanning at given amount of columns
                     tableLayoutPanel4.Controls.Add(b, startColoumn, row);
+
                     //something is completely fucking wrong with this bit. If the value of endColumn - startColumn + is less than 2 it just wont fucking react and the result ends up being nothing.
                     //which leads to a button with a span of 0. In other words - you cant see the button of any reservation that starts and ends on the same day.
                     //also whenever something spans from ex. Monday-Monday the week after, you cant see the 1-day span in the last week.
@@ -216,6 +225,8 @@ namespace P4FormsTest2
                 }   
             }
         }
+
+        //Print / Update the room numbers in the reservation grid
         public void printRooms()
         {
             ClearRoomLabels();
@@ -235,6 +246,7 @@ namespace P4FormsTest2
             }
         }
 
+        //Open a window showing the information of the clicked reservation
         public void resViewButton_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -283,6 +295,7 @@ namespace P4FormsTest2
             return currentWeekStartDate;
         }
 
+        //Decrease the week number, date labels and print out the relevant reservations for the new week
         private void decreaseWeekBtn_Click(object sender, EventArgs e)
         {        
             WeekShownStart = WeekShownStart.AddDays(-7);
@@ -300,6 +313,7 @@ namespace P4FormsTest2
             printReservations();
         }
 
+        //Increase the week number, date labels and print out the relevant reservations for the new week
         private void increaseWeekBtn_Click(object sender, EventArgs e)
         {      
             WeekShownStart = WeekShownStart.AddDays(7);
@@ -317,6 +331,7 @@ namespace P4FormsTest2
             printReservations();
         }
 
+        //Get the week number of the current week
         private void GetCurrentWeek()
         {
             // Get the Calendar associated with a specific culture.
@@ -335,6 +350,7 @@ namespace P4FormsTest2
             newRoomForm.Show();
         }
 
+        //Clear all reservations from the grid
         private void ClearReservationButtons()
         {
             for (int i = tableLayoutPanel4.Controls.Count - 1; i >= 0; --i)
@@ -346,6 +362,7 @@ namespace P4FormsTest2
             }          
         }
 
+        //Clear all room numbers from the grid
         private void ClearRoomLabels()
         {
             for (int i = tableLayoutPanel4.Controls.Count - 1; i >= 0; --i)
@@ -357,6 +374,7 @@ namespace P4FormsTest2
             }
         }
 
+        //Update the relevant reservations list to contain the reservations that are relevan to the current week shown
         private void UpdateRelevantReservations()
         {
             List<Reservation> updatedReservations = new List<Reservation>();        

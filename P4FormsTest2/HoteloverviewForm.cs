@@ -62,47 +62,70 @@ namespace P4FormsTest2
         {
             Rooms.Sort();
             Rooms.Reverse();
+
+            //get the amount of floors
             int floorcount = Convert.ToInt32(Math.Floor(Convert.ToDouble(Rooms[0].Number) / 100 + 1));
-            label1.Text = floorcount.ToString();
 
-            TableLayoutPanel floorTablePanel = new TableLayoutPanel();
+            //create two containers that are tablelayoutpanels for the floor overview and the button grid. Add to tablelayoutpanel2.
+
+            floorTablePanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            floorTablePanel.MaximumSize = new Size(floorTablePanel.Width, floorTablePanel.Height);
             floorTablePanel.AutoScroll = true;
-            floorTablePanel.RowCount = floorcount * 2;
 
-            tableLayoutPanel2.Controls.Add(floorTablePanel, 0, 1);
-
-            for(int i = 0; i < floorTablePanel.RowCount; i++)
+            for (int i = 0; i < floorTablePanel.RowCount; i++)
             {
-                if(i%2 == 0)
-                {
-                    Label floorLabel = new Label();
-                    //floorLabel.Text = "Floor" + i.ToString();
-                    floorLabel.Text = "Floor x";
-                    floorTablePanel.Controls.Add(floorLabel);
-                } else
-                {
-                    TableLayoutPanel roomstable = new TableLayoutPanel();
-                    roomstable.ColumnCount = 8;
-                    roomstable.Dock = DockStyle.Fill;
-                    roomstable.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-                    TableLayoutStyleCollection styles = roomstable.ColumnStyles;
-                    roomstable.RowCount = 3;
-
-                    foreach(ColumnStyle style in styles)
-                    {
-                        style.SizeType = SizeType.Percent;
-                        style.Width = 50;
-                    }
-                    foreach(RowStyle style in styles)
-                    {
-                        style.SizeType = SizeType.Absolute;
-                        style.Height = 20;
-                    }
-
-                    floorTablePanel.Controls.Add(roomstable);
-                }
-
+                floorTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 100));
             }
+
+            TableLayoutPanel buttonTablePanel = new TableLayoutPanel();
+            buttonTablePanel.ColumnCount = 1;
+            buttonTablePanel.RowCount = floorcount;
+            buttonTablePanel.AutoScroll = true;
+            buttonTablePanel.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Controls.Add(buttonTablePanel, 1, 0);
+
+            //Create a button for each floor and add to the button grid
+            int floornumberButton = floorcount - 1;
+            for (int i = 0; i < buttonTablePanel.RowCount; i++)
+            {
+                buttonTablePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 80));
+                Button b = new Button();
+                b.Text = "Floor " + floornumberButton.ToString();
+                b.Dock = DockStyle.Top;
+                b.Height = 80;
+                buttonTablePanel.Controls.Add(b, 0, i);
+                floornumberButton--;
+            }
+            //Create a subgrid and label for each floor. Add both to the floorTabelPanel.
+            int x = floorcount - 1;
+            for (int i = 0; i < floorcount*2; i++)
+            {
+                /*Label l = new Label();
+                l.Text = "Floor" + x.ToString();
+                floorPanel.Controls.Add(l);*/
+                TableLayoutPanel roomstable = new TableLayoutPanel();
+                roomstable.ColumnCount = 8;
+                roomstable.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+                roomstable.RowCount = 3;
+                //roomstable.Dock = DockStyle.Top;
+
+                for (int j = 0; j < roomstable.ColumnCount; j++)
+                {
+                    roomstable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+                }
+                    
+                for (int j = 0; j < roomstable.RowCount; j++)
+                {
+                    //roomstable.RowStyles.Add(new RowStyle(SizeType.Percent, 33));
+                    roomstable.RowStyles.Add(new RowStyle(SizeType.Absolute, 80));
+                    /*Button b = new Button();
+                    b.Text = "test";
+                    roomstable.Controls.Add(b,0,j);*/
+                }
+                    
+                //floorPanel.Controls.Add(roomstable);                     
+            }
+            
 
             /*for (int i = 0; i < floorcount; i++)
             {

@@ -22,6 +22,7 @@ namespace P4FormsTest2
             InitializeComponent();
         }
 
+        //Gets run once when the form is loaded
         private void GuestmanagementForm_Load(object sender, EventArgs e)
         {
             reservations = JsonConvert.DeserializeObject<List<Reservation>>(File.ReadAllText(@"..\..\..\reservations.json"));
@@ -59,6 +60,7 @@ namespace P4FormsTest2
 
         }
 
+        //Add each guest to the visual list of guests
         private void LoadGuests()
         {
             ClearRows();
@@ -70,21 +72,10 @@ namespace P4FormsTest2
 
         private void ClearRows()
         {
-            /*do
-            {
-                foreach (DataGridViewRow row in GuestListGrid.Rows)
-                {
-                    try
-                    {
-                        GuestListGrid.Rows.Remove(row);
-                    }
-                    catch (Exception) { }
-                }
-            } while (GuestListGrid.Rows.Count > 1);*/
-
             GuestListGrid.Rows.Clear();
         }
 
+        //Set the list to only show current guests
         private void CurrentButton_Click(object sender, EventArgs e)
         {
             ClearRows();
@@ -102,6 +93,7 @@ namespace P4FormsTest2
             SetColor(FutureButton, Color.Gainsboro, Color.Black);
         }
 
+        //Set the list to only show previous guests
         private void PreviousButton_Click(object sender, EventArgs e)
         {
             ClearRows();
@@ -119,6 +111,7 @@ namespace P4FormsTest2
             SetColor(CurrentButton, Color.Gainsboro, Color.Black);
         }
 
+        //Set the list to only show future guests
         private void FutureButton_Click(object sender, EventArgs e)
         {
             ClearRows();
@@ -136,6 +129,7 @@ namespace P4FormsTest2
             SetColor(CurrentButton, Color.Gainsboro, Color.Black);
         }
 
+        //Set the list to show all guests
         private void AllButton_Click(object sender, EventArgs e)
         {
             LoadGuests();
@@ -152,6 +146,7 @@ namespace P4FormsTest2
             button.ForeColor = fore;
         }
 
+        //Show the guests whos name, room number, check in or out date contains the input from the search field
         private void searchButton_Click(object sender, EventArgs e)
         {
             ClearRows();

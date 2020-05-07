@@ -96,7 +96,7 @@ namespace P4FormsTest2
                     }
                     else
                     {
-                        ShowErrorMessage errorMessage = new ShowErrorMessage("You can't delete a room that is currently booked");
+                        ShowErrorMessage errorMessage = new ShowErrorMessage("You can't delete a room that has been or is currently booked");
                         errorMessage.Show();
                     }
                 }
@@ -115,7 +115,8 @@ namespace P4FormsTest2
 
         private void editRoomButton_Click(object sender, EventArgs e)
         {
-
+            EditRoomForm form = new EditRoomForm(Room, HoteloverviewForm);
+            form.Show();
         }
     }
 }

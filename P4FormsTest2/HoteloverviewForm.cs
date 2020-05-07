@@ -162,7 +162,7 @@ namespace P4FormsTest2
                         {
                             Button b = new Button();
                             b.Name = "room_" + room.Number.ToString();
-                            b.Text = (room.Number.ToString() + "\n\n" + "AVA");                            
+                            b.Text = (room.Number.ToString());                            
                             b.Font = new Font(b.Font, FontStyle.Bold);
                             
                             b.FlatStyle = FlatStyle.Flat;

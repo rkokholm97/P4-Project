@@ -59,6 +59,12 @@
     <Compile Include="EditReservationForm.Designer.cs">
       <DependentUpon>EditReservationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRoomForm.Designer.cs">
+      <DependentUpon>EditRoomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guest.cs" />
     <Compile Include="GuestmanagementForm.cs">
       <SubType>Form</SubType>
@@ -127,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="EditReservationForm.resx">
       <DependentUpon>EditReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRoomForm.resx">
+      <DependentUpon>EditRoomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -16,14 +16,6 @@
     "RowNumber": 0
   },
   {
-    "Number": 103,
-    "IsSuite": true,
-    "MaxOccupants": 0,
-    "Status": 0,
-    "Floor": 1,
-    "RowNumber": 0
-  },
-  {
     "Number": 201,
     "IsSuite": false,
     "MaxOccupants": 3,
@@ -35,39 +27,23 @@
     "Number": 202,
     "IsSuite": false,
     "MaxOccupants": 3,
-    "Status": 0,
+    "Status": 2,
     "Floor": 2,
     "RowNumber": 0
   },
   {
     "Number": 301,
-    "IsSuite": false,
-    "MaxOccupants": 0,
-    "Status": 0,
-    "Floor": 3,
-    "RowNumber": 0
-  },
-  {
-    "Number": 302,
-    "IsSuite": false,
-    "MaxOccupants": 0,
+    "IsSuite": true,
+    "MaxOccupants": 3,
     "Status": 0,
     "Floor": 3,
     "RowNumber": 0
   },
   {
     "Number": 401,
-    "IsSuite": false,
-    "MaxOccupants": 0,
-    "Status": 1,
-    "Floor": 4,
-    "RowNumber": 0
-  },
-  {
-    "Number": 402,
-    "IsSuite": false,
-    "MaxOccupants": 2,
-    "Status": 2,
+    "IsSuite": true,
+    "MaxOccupants": 6,
+    "Status": 0,
     "Floor": 4,
     "RowNumber": 0
   }
